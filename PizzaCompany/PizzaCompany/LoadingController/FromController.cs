@@ -1,11 +1,13 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
 
 namespace PizzaCompany.LoadingController
 {
     public class FromController
     {
 
-        //===============>
+        //======For Controller Sidbar=========>
         public void AddControlsSidebar(Form f, Panel targetPanel)
         {
             targetPanel.Controls.Clear();
@@ -17,7 +19,7 @@ namespace PizzaCompany.LoadingController
         }
 
 
-        //============>
+        //=======For Contoroller MenuBar=====>
 
         public void AddMenuControls(Form form, Panel targetoPanel)
         {
@@ -29,5 +31,13 @@ namespace PizzaCompany.LoadingController
             targetoPanel.Controls.Add(form);
             form.Show();
         }
+
+
+      
+
+
+
+
+
     }
 }

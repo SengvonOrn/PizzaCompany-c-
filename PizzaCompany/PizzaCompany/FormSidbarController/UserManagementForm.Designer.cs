@@ -39,6 +39,7 @@
             this.dgvPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvRole = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgSex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.checkOut = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgvedit = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgdelet = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
@@ -85,6 +86,7 @@
             this.dgvPhone,
             this.dgvRole,
             this.dgSex,
+            this.checkOut,
             this.dgvedit,
             this.dgdelet});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -102,7 +104,7 @@
             this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.RowHeadersWidth = 51;
             this.guna2DataGridView1.RowTemplate.Height = 24;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(1263, 618);
+            this.guna2DataGridView1.Size = new System.Drawing.Size(1263, 675);
             this.guna2DataGridView1.TabIndex = 10;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -130,7 +132,7 @@
             // dgSno
             // 
             this.dgSno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgSno.FillWeight = 70F;
+            this.dgSno.FillWeight = 50F;
             this.dgSno.HeaderText = "Sr#";
             this.dgSno.MinimumWidth = 70;
             this.dgSno.Name = "dgSno";
@@ -176,16 +178,29 @@
             // 
             // dgSex
             // 
+            this.dgSex.FillWeight = 70F;
             this.dgSex.HeaderText = "Sex";
             this.dgSex.MinimumWidth = 6;
             this.dgSex.Name = "dgSex";
             this.dgSex.ReadOnly = true;
             // 
+            // checkOut
+            // 
+            this.checkOut.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.checkOut.FillWeight = 50F;
+            this.checkOut.HeaderText = "Check";
+            this.checkOut.Image = global::PizzaCompany.Properties.Resources.exit;
+            this.checkOut.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.checkOut.MinimumWidth = 50;
+            this.checkOut.Name = "checkOut";
+            this.checkOut.ReadOnly = true;
+            this.checkOut.Width = 50;
+            // 
             // dgvedit
             // 
             this.dgvedit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dgvedit.FillWeight = 50F;
-            this.dgvedit.HeaderText = "";
+            this.dgvedit.HeaderText = "Edited";
             this.dgvedit.Image = global::PizzaCompany.Properties.Resources.edit;
             this.dgvedit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dgvedit.MinimumWidth = 50;
@@ -197,7 +212,7 @@
             // 
             this.dgdelet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dgdelet.FillWeight = 50F;
-            this.dgdelet.HeaderText = "";
+            this.dgdelet.HeaderText = "Deleted";
             this.dgdelet.Image = global::PizzaCompany.Properties.Resources.trash;
             this.dgdelet.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dgdelet.MinimumWidth = 50;
@@ -209,7 +224,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1328, 833);
+            this.ClientSize = new System.Drawing.Size(1328, 880);
             this.Controls.Add(this.guna2DataGridView1);
             this.Name = "UserManagementForm";
             this.Text = "UserManagementForm";
@@ -233,6 +248,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvPhone;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvRole;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgSex;
+        private System.Windows.Forms.DataGridViewImageColumn checkOut;
         private System.Windows.Forms.DataGridViewImageColumn dgvedit;
         private System.Windows.Forms.DataGridViewImageColumn dgdelet;
     }

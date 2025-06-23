@@ -55,6 +55,7 @@
             this.passwd.SelectedText = "";
             this.passwd.Size = new System.Drawing.Size(407, 56);
             this.passwd.TabIndex = 0;
+            this.passwd.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -85,6 +86,7 @@
             this.confirmpass.SelectedText = "";
             this.confirmpass.Size = new System.Drawing.Size(407, 56);
             this.confirmpass.TabIndex = 0;
+            this.confirmpass.UseSystemPasswordChar = true;
             // 
             // label2
             // 
@@ -99,15 +101,16 @@
             // btnAuth
             // 
             this.btnAuth.AutoRoundedCorners = true;
+            this.btnAuth.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAuth.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAuth.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAuth.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAuth.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnAuth.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAuth.ForeColor = System.Drawing.Color.White;
-            this.btnAuth.Location = new System.Drawing.Point(392, 250);
+            this.btnAuth.Location = new System.Drawing.Point(383, 250);
             this.btnAuth.Name = "btnAuth";
-            this.btnAuth.Size = new System.Drawing.Size(102, 50);
+            this.btnAuth.Size = new System.Drawing.Size(143, 50);
             this.btnAuth.TabIndex = 2;
             this.btnAuth.Text = "Log";
             this.btnAuth.Click += new System.EventHandler(this.btnAuth_Click);
@@ -116,6 +119,7 @@
             // 
             this.btnCancel.AutoRoundedCorners = true;
             this.btnCancel.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -123,9 +127,9 @@
             this.btnCancel.FillColor = System.Drawing.Color.Red;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(256, 250);
+            this.btnCancel.Location = new System.Drawing.Point(215, 250);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(102, 50);
+            this.btnCancel.Size = new System.Drawing.Size(143, 50);
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);

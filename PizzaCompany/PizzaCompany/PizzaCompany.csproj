@@ -36,6 +36,9 @@
     <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net461\Guna.UI2.dll</HintPath>
     </Reference>
+    <Reference Include="NAudio, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.1.10.0\lib\net35\NAudio.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="QRCoder, Version=1.6.0.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
@@ -56,6 +59,9 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="TagLibSharp, Version=2.3.0.0, Culture=neutral, PublicKeyToken=db62eba44689b5b0, processorArchitecture=MSIL">
+      <HintPath>..\packages\TagLibSharp.2.3.0\lib\netstandard2.0\TagLibSharp.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
@@ -137,6 +143,12 @@
     <Compile Include="FormSidbarController\Customer.Designer.cs">
       <DependentUpon>Customer.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSidbarController\customerManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSidbarController\customerManagement.Designer.cs">
+      <DependentUpon>customerManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSidbarController\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,19 +179,45 @@
     <Compile Include="FormSidbarController\ReportAnalytics.Designer.cs">
       <DependentUpon>ReportAnalytics.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSidbarController\StockProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSidbarController\StockProduct.Designer.cs">
+      <DependentUpon>StockProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSidbarController\UserManagementForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormSidbarController\UserManagementForm.Designer.cs">
       <DependentUpon>UserManagementForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Helper\Hover.cs" />
-    <Compile Include="Helper\PopupClass.cs" />
+    <Compile Include="Helper\ConvertToImage.cs" />
+    <Compile Include="Helper\customerCheckOutform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Helper\customerCheckOutform.Designer.cs">
+      <DependentUpon>customerCheckOutform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\Rating.cs" />
+    <Compile Include="Helper\RealTimeClock.cs" />
     <Compile Include="Helper\SessionClass.cs" />
+    <Compile Include="Helper\TimeClock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Helper\TimeClock.Designer.cs">
+      <DependentUpon>TimeClock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LearnMore\Thankyou.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LearnMore\Thankyou.Designer.cs">
+      <DependentUpon>Thankyou.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoadingController\FromController.cs" />
     <Compile Include="MainClass.cs" />
     <Compile Include="Model\CartItem.cs" />
     <Compile Include="Model\CustomerModel.cs" />
+    <Compile Include="Model\DataPointModel.cs" />
     <Compile Include="Model\mProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +232,7 @@
     </Compile>
     <Compile Include="Model\ProductModel.cs" />
     <Compile Include="Model\SharedCart.cs" />
+    <Compile Include="Model\stockModel.cs" />
     <Compile Include="Model\Transaction.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,13 +259,25 @@
     <Compile Include="SampleForm.Designer.cs">
       <DependentUpon>SampleForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SampleOrder.cs">
+    <Compile Include="Stock\fmOutStock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SampleOrder.Designer.cs">
-      <DependentUpon>SampleOrder.cs</DependentUpon>
+    <Compile Include="Stock\fmOutStock.Designer.cs">
+      <DependentUpon>fmOutStock.cs</DependentUpon>
     </Compile>
-    <Compile Include="ultill\CartManager.cs" />
+    <Compile Include="Stock\stockModelform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\stockModelform.Designer.cs">
+      <DependentUpon>stockModelform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stock\StockTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock\StockTable.Designer.cs">
+      <DependentUpon>StockTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ultill\formatMoney.cs" />
     <EmbeddedResource Include="DashbordForm.resx">
       <DependentUpon>DashbordForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -236,11 +287,23 @@
     <EmbeddedResource Include="FormMenuController\AppetizerForm.resx">
       <DependentUpon>AppetizerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuController\BeverageForm.resx">
+      <DependentUpon>BeverageForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMenuController\BitePizzaForm.resx">
       <DependentUpon>BitePizzaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenuController\BuffPizzaForm.resx">
       <DependentUpon>BuffPizzaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuController\CheckenForm.resx">
+      <DependentUpon>CheckenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuController\DessertForm.resx">
+      <DependentUpon>DessertForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuController\KitMenuForm.resx">
+      <DependentUpon>KitMenuForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenuController\MainBishForm.resx">
       <DependentUpon>MainBishForm.cs</DependentUpon>
@@ -248,8 +311,14 @@
     <EmbeddedResource Include="FormMenuController\PizzaForm.resx">
       <DependentUpon>PizzaForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuController\SaladForm.resx">
+      <DependentUpon>SaladForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSidbarController\Customer.resx">
       <DependentUpon>Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSidbarController\customerManagement.resx">
+      <DependentUpon>customerManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSidbarController\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
@@ -266,8 +335,20 @@
     <EmbeddedResource Include="FormSidbarController\ReportAnalytics.resx">
       <DependentUpon>ReportAnalytics.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormSidbarController\StockProduct.resx">
+      <DependentUpon>StockProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSidbarController\UserManagementForm.resx">
       <DependentUpon>UserManagementForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Helper\customerCheckOutform.resx">
+      <DependentUpon>customerCheckOutform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Helper\TimeClock.resx">
+      <DependentUpon>TimeClock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LearnMore\Thankyou.resx">
+      <DependentUpon>Thankyou.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Model\mProductForm.resx">
       <DependentUpon>mProductForm.cs</DependentUpon>
@@ -297,8 +378,14 @@
     <EmbeddedResource Include="SampleForm.resx">
       <DependentUpon>SampleForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SampleOrder.resx">
-      <DependentUpon>SampleOrder.cs</DependentUpon>
+    <EmbeddedResource Include="Stock\fmOutStock.resx">
+      <DependentUpon>fmOutStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\stockModelform.resx">
+      <DependentUpon>stockModelform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock\StockTable.resx">
+      <DependentUpon>StockTable.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -318,12 +405,30 @@
   <ItemGroup>
     <Content Include="Images\add\add-product.png" />
     <Content Include="Images\add\addition.png" />
+    <Content Include="Images\add\arrow.png" />
+    <Content Include="Images\add\bell.png" />
+    <Content Include="Images\add\box.png" />
+    <Content Include="Images\add\clock.png" />
+    <Content Include="Images\add\credit-card.png" />
+    <Content Include="Images\add\customer-analysis.png" />
+    <Content Include="Images\add\delivery-bike.png" />
     <Content Include="Images\add\edit.png" />
+    <Content Include="Images\add\empy.png" />
+    <Content Include="Images\add\exit.png" />
     <Content Include="Images\add\loupe.png" />
+    <Content Include="Images\add\offer.png" />
+    <Content Include="Images\add\payment-method.png" />
+    <Content Include="Images\add\printer.png" />
     <Content Include="Images\add\product-photo.png" />
+    <Content Include="Images\add\schedule.png" />
+    <Content Include="Images\add\search.png" />
+    <Content Include="Images\add\sold-out.png" />
+    <Content Include="Images\add\stocksblack.png" />
+    <Content Include="Images\add\stockwhite.png" />
     <Content Include="Images\add\trash.png" />
     <Content Include="Images\add\useradd.png" />
     <Content Include="Images\Logo\companyLogo.png" />
+    <Content Include="Images\Logo\Group 1.png" />
     <Content Include="Images\Sidebar\add-productblack.png" />
     <Content Include="Images\Sidebar\add-productwhite.png" />
     <Content Include="Images\Sidebar\dashboard.png" />

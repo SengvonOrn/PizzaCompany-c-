@@ -36,9 +36,9 @@
             // 
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 135);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 83);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1116, 587);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1116, 639);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // searchMenu
@@ -52,12 +52,14 @@
             this.searchMenu.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.searchMenu.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.searchMenu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.searchMenu.Location = new System.Drawing.Point(640, 13);
+            this.searchMenu.IconLeft = global::PizzaCompany.Properties.Resources.search;
+            this.searchMenu.IconLeftSize = new System.Drawing.Size(30, 30);
+            this.searchMenu.Location = new System.Drawing.Point(722, 13);
             this.searchMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.searchMenu.Name = "searchMenu";
             this.searchMenu.PlaceholderText = "";
             this.searchMenu.SelectedText = "";
-            this.searchMenu.Size = new System.Drawing.Size(403, 97);
+            this.searchMenu.Size = new System.Drawing.Size(384, 56);
             this.searchMenu.TabIndex = 1;
             this.searchMenu.TextChanged += new System.EventHandler(this.searchMenu_TextChanged);
             // 

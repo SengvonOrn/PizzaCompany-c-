@@ -54,7 +54,7 @@
             this.dl = new System.Windows.Forms.RichTextBox();
             this.cic = new System.Windows.Forms.RichTextBox();
             this.btnOrders = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
@@ -97,7 +97,6 @@
             this.phone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.phone.Location = new System.Drawing.Point(244, 96);
             this.phone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.phone.Modified = true;
             this.phone.Name = "phone";
             this.phone.PlaceholderText = "";
             this.phone.SelectedText = "";
@@ -128,7 +127,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(32, 271);
+            this.label3.Location = new System.Drawing.Point(36, 271);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 32);
             this.label3.TabIndex = 2;
@@ -182,7 +181,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(32, 357);
+            this.label4.Location = new System.Drawing.Point(41, 357);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 32);
             this.label4.TabIndex = 2;
@@ -202,7 +201,7 @@
             this.suite.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.suite.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.suite.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.suite.Location = new System.Drawing.Point(244, 367);
+            this.suite.Location = new System.Drawing.Point(244, 357);
             this.suite.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.suite.Name = "suite";
             this.suite.PlaceholderText = "";
@@ -224,7 +223,7 @@
             this.Crosstr.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Crosstr.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Crosstr.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Crosstr.Location = new System.Drawing.Point(244, 466);
+            this.Crosstr.Location = new System.Drawing.Point(244, 446);
             this.Crosstr.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Crosstr.Name = "Crosstr";
             this.Crosstr.PlaceholderText = "";
@@ -236,7 +235,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(32, 466);
+            this.label5.Location = new System.Drawing.Point(32, 446);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(109, 32);
             this.label5.TabIndex = 2;
@@ -256,7 +255,7 @@
             this.cityregion.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cityregion.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.cityregion.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cityregion.Location = new System.Drawing.Point(244, 566);
+            this.cityregion.Location = new System.Drawing.Point(245, 533);
             this.cityregion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cityregion.Name = "cityregion";
             this.cityregion.PlaceholderText = "";
@@ -268,7 +267,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(32, 566);
+            this.label6.Location = new System.Drawing.Point(32, 533);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(130, 32);
             this.label6.TabIndex = 2;
@@ -319,7 +318,7 @@
             this.cr.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cr.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.cr.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cr.Location = new System.Drawing.Point(661, 566);
+            this.cr.Location = new System.Drawing.Point(662, 533);
             this.cr.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cr.Name = "cr";
             this.cr.PlaceholderText = "";
@@ -332,7 +331,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(841, 566);
+            this.label8.Location = new System.Drawing.Point(841, 546);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(85, 32);
             this.label8.TabIndex = 2;
@@ -351,7 +350,7 @@
             this.postal.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.postal.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.postal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.postal.Location = new System.Drawing.Point(951, 566);
+            this.postal.Location = new System.Drawing.Point(932, 533);
             this.postal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.postal.Name = "postal";
             this.postal.PlaceholderText = "";
@@ -366,7 +365,7 @@
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(31)))), ((int)(((byte)(242)))));
             this.guna2Panel2.Controls.Add(this.label10);
             this.guna2Panel2.Controls.Add(this.label9);
-            this.guna2Panel2.Location = new System.Drawing.Point(0, 646);
+            this.guna2Panel2.Location = new System.Drawing.Point(0, 613);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(1328, 59);
             this.guna2Panel2.TabIndex = 4;
@@ -399,7 +398,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(41, 894);
+            this.label11.Location = new System.Drawing.Point(41, 810);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(345, 32);
             this.label11.TabIndex = 2;
@@ -409,18 +408,18 @@
             // 
             this.dl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dl.Location = new System.Drawing.Point(38, 723);
+            this.dl.Location = new System.Drawing.Point(38, 678);
             this.dl.Name = "dl";
-            this.dl.Size = new System.Drawing.Size(608, 156);
+            this.dl.Size = new System.Drawing.Size(608, 114);
             this.dl.TabIndex = 6;
             this.dl.Text = "";
             // 
             // cic
             // 
             this.cic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cic.Location = new System.Drawing.Point(681, 723);
+            this.cic.Location = new System.Drawing.Point(681, 678);
             this.cic.Name = "cic";
-            this.cic.Size = new System.Drawing.Size(608, 156);
+            this.cic.Size = new System.Drawing.Size(608, 114);
             this.cic.TabIndex = 6;
             this.cic.Text = "";
             // 
@@ -431,6 +430,7 @@
             this.btnOrders.BorderColor = System.Drawing.Color.Transparent;
             this.btnOrders.BorderRadius = 3;
             this.btnOrders.BorderThickness = 1;
+            this.btnOrders.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOrders.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnOrders.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnOrders.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -438,40 +438,42 @@
             this.btnOrders.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(31)))), ((int)(((byte)(242)))));
             this.btnOrders.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrders.ForeColor = System.Drawing.Color.White;
-            this.btnOrders.Location = new System.Drawing.Point(1174, 887);
+            this.btnOrders.Location = new System.Drawing.Point(1174, 810);
             this.btnOrders.Name = "btnOrders";
             this.btnOrders.Size = new System.Drawing.Size(115, 60);
             this.btnOrders.TabIndex = 7;
             this.btnOrders.Text = "Orders";
             this.btnOrders.Click += new System.EventHandler(this.btnOrders_Click);
             // 
-            // guna2Button2
+            // btnCancel
             // 
-            this.guna2Button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Button2.Animated = true;
-            this.guna2Button2.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2Button2.BorderRadius = 3;
-            this.guna2Button2.BorderThickness = 1;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(1014, 887);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(115, 60);
-            this.guna2Button2.TabIndex = 7;
-            this.guna2Button2.Text = "Cancel";
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.Animated = true;
+            this.btnCancel.BorderColor = System.Drawing.Color.Transparent;
+            this.btnCancel.BorderRadius = 3;
+            this.btnCancel.BorderThickness = 1;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(1027, 810);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(115, 60);
+            this.btnCancel.TabIndex = 7;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // Customer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(1328, 954);
-            this.Controls.Add(this.guna2Button2);
+            this.ClientSize = new System.Drawing.Size(1328, 884);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOrders);
             this.Controls.Add(this.dl);
             this.Controls.Add(this.cic);
@@ -497,6 +499,7 @@
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Customer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer";
             this.Load += new System.EventHandler(this.Customer_Load);
             this.guna2Panel1.ResumeLayout(false);
@@ -514,28 +517,28 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private Guna.UI2.WinForms.Guna2TextBox name;
-        private Guna.UI2.WinForms.Guna2TextBox address;
         private System.Windows.Forms.Label label4;
-        private Guna.UI2.WinForms.Guna2TextBox suite;
-        private Guna.UI2.WinForms.Guna2TextBox Crosstr;
         private System.Windows.Forms.Label label5;
-        private Guna.UI2.WinForms.Guna2TextBox cityregion;
         private System.Windows.Forms.Label label6;
-        private Guna.UI2.WinForms.Guna2TextBox ext;
         private System.Windows.Forms.Label label7;
-        private Guna.UI2.WinForms.Guna2TextBox cr;
         private System.Windows.Forms.Label label8;
-        private Guna.UI2.WinForms.Guna2TextBox postal;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.RichTextBox dl;
-        private System.Windows.Forms.RichTextBox cic;
         private System.Windows.Forms.Label label12;
         private Guna.UI2.WinForms.Guna2Button btnOrders;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button btnCancel;
         public Guna.UI2.WinForms.Guna2TextBox phone;
+        public Guna.UI2.WinForms.Guna2TextBox name;
+        public Guna.UI2.WinForms.Guna2TextBox address;
+        public Guna.UI2.WinForms.Guna2TextBox suite;
+        public Guna.UI2.WinForms.Guna2TextBox Crosstr;
+        public Guna.UI2.WinForms.Guna2TextBox cityregion;
+        public Guna.UI2.WinForms.Guna2TextBox ext;
+        public Guna.UI2.WinForms.Guna2TextBox cr;
+        public Guna.UI2.WinForms.Guna2TextBox postal;
+        public System.Windows.Forms.RichTextBox dl;
+        public System.Windows.Forms.RichTextBox cic;
     }
 }

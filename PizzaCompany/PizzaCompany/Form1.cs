@@ -8,6 +8,7 @@ namespace PizzaCompany
         public Form1()
         {
             InitializeComponent();
+            copyrigth.Text = $"© {DateTime.Now.Year} Sengvoun orn. All rights reserved.";
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
@@ -31,5 +32,6 @@ namespace PizzaCompany
                 MessageBox.Show("Passwords do not match.");
             }
         }
+
     }
 }

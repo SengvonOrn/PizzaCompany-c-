@@ -2,10 +2,10 @@
 using PizzaCompany.LoadingController;
 using PizzaCompany.FormMenuController;
 using System.Windows.Forms;
-using PizzaCompany.Helper;
 using PizzaCompany.Model;
 using Guna.UI2.WinForms;
 using System.Drawing;
+using PizzaCompany.Helper;
 namespace PizzaCompany.FormSidbarController
 {
     public partial class Dashboard : Form
@@ -18,10 +18,11 @@ namespace PizzaCompany.FormSidbarController
             Instance = this;
             RefreshCartUI();
             Payment();
+       
         }
-        //==============================================>
+        PermissionForm permission = new PermissionForm();
 
-
+        //=========================Update Item=====================>
 
         public void UpdateCartCard(CartItem item)
         {
@@ -47,16 +48,17 @@ namespace PizzaCompany.FormSidbarController
         }
 
 
-        //======================================================>
-
-
-
+        //==========================Add To Cart==================>
 
         public void AddCartCard(CartItem item)
         {
+
+
+
     
             Guna2Panel guna2Panel = new Guna2Panel
             {
+               
                 Size = new Size(350, 85),
                 BorderRadius = 10,
                 BorderColor = Color.Gray,
@@ -66,52 +68,36 @@ namespace PizzaCompany.FormSidbarController
                 Tag = item
             };
 
+
+
             //=====image==>
 
-
+            Guna2Panel imageWrapper = new Guna2Panel
+            {
+                Size = new Size(74, 74),
+                Location = new Point(5, 5),
+                BorderRadius = 3,
+            };
+            ConvertToImage convertTo = new ConvertToImage();
             Guna2PictureBox pictureBox = new Guna2PictureBox
             {
+                Image = convertTo.Imageconvert(item.ProductImage) ?? Properties.Resources.empy,
                 Size = new Size(70, 70),
-                Location = new Point(5, 5),
-                Image = item.ProductImage,
-                SizeMode = PictureBoxSizeMode.Zoom,
-                BorderRadius = 5
-            };
+                SizeMode = PictureBoxSizeMode.StretchImage,
+                BorderRadius = 3,
 
+            };
+            imageWrapper.Controls.Add(pictureBox);
 
             //===========label1===>
-
-
             Label lblTitle = new Label
             {
                 Text = item.Name,
-                Font = new Font("Segoe UI", 10, FontStyle.Bold),
+                Font = new Font("Segoe UI", 9, FontStyle.Bold),
                 Location = new Point(85, 5),
-                AutoSize = true
-            };
-
-
-            //====================>
-
-
-            Label lblQty = new Label
-            {
-                Name = "lblQty",
-                Text = "x: " + item.qty,
-                Font = new Font("Segoe UI", 8),
-                Location = new Point(85, 30),
-                AutoSize = true
-            };
-
-
-            //===================>
-
-            Label lblSize = new Label
-            {
-                Text = "Size: " + item.Size,
-                Font = new Font("Segoe UI", 8),
-                Location = new Point(85, 50),
-                AutoSize = true
+                BackColor = Color.Transparent,
+                AutoSize = false,                
+                AutoEllipsis = true,
             };
 
             //===================>
@@ -120,23 +106,43 @@ namespace PizzaCompany.FormSidbarController
             {
                 Text = item.dese,
                 Font = new Font("Segoe UI", 8),
-                Location = new Point(85, 70),
-                AutoSize = true
+                Location = new Point(85, 30),
+                AutoSize = false,
+                BackColor = Color.Transparent,
+                AutoEllipsis = true,
             };
 
 
+            //====================>
+            Label lblQty = new Label
+            {
+                Name = "lblQty",
+                Text = "x" + item.qty,
+                Font = new Font("Segoe UI", 8),
+                Location = new Point(85, 50),
+                AutoSize = true
+            };
+
+            //===================>
+            Label lblSize = new Label
+            {
+                Text = int.TryParse(item.Size, out int size)
+                    ? (size == 6 ? "6S" : size == 9 ? "9M" : "12L") : "",
+                Font = new Font("Segoe UI", 8),
+                Location = new Point(85, 68),
+                AutoSize = true
+            };
+
+          //==================>
 
             Label lblPrice = new Label
             {
-                Text = item.Price.ToString(),
+                Text = "$" + item.Price.ToString(),
                 Font = new Font("Segoe UI", 8),
                 Location = new Point(300, 68),
                 AutoSize = true
             };
-
-
             //=====================>
-
             // Delete Button
             Guna2Button btnDelete = new Guna2Button
             {
@@ -144,8 +150,9 @@ namespace PizzaCompany.FormSidbarController
                 FillColor = Color.Red,
                 ForeColor = Color.White,
                 Size = new Size(60, 25),
-                Location = new Point(270, 10),
-                Font = new Font("Segoe UI", 8)
+                Location = new Point(280, 10),
+                Font = new Font("Segoe UI", 8),
+                BorderRadius = 3
             };
             btnDelete.Click += (s, e) => RemoveCartItem(item, guna2Panel);
             //=====================>
@@ -156,22 +163,25 @@ namespace PizzaCompany.FormSidbarController
                 Size = new Size(60, 25),
                 ForeColor = Color.White,
                 FillColor = Color.FromArgb(112, 31, 242),
-                Location = new Point(200, 10),
-                Font = new Font("Segoe UI", 10, FontStyle.Bold)
+                Location = new Point(210, 10),
+                Font = new Font("Segoe UI", 10, FontStyle.Bold),
+                BorderRadius = 3
 
 
             };
+
+
 
             btnDecrement.Click += (s, e) => DecrementCartItem(item, lblQty, guna2Panel);
 
 
             //====================>
             // Add controls
-            guna2Panel.Controls.Add(pictureBox);
+            guna2Panel.Controls.Add(imageWrapper);
             guna2Panel.Controls.Add(lblTitle);
-            guna2Panel.Controls.Add(lblQty);
-            guna2Panel.Controls.Add(lblSize);
             guna2Panel.Controls.Add(lblDesc);
+            guna2Panel.Controls.Add(lblQty);
+            guna2Panel.Controls.Add(lblSize);       
             guna2Panel.Controls.Add(btnDelete);
             guna2Panel.Controls.Add(btnDecrement);
             guna2Panel.Controls.Add(lblPrice);
@@ -180,15 +190,20 @@ namespace PizzaCompany.FormSidbarController
         }
 
 
-        //===========================================>
-
-
+        //==================Remove Item=========================>
         public void RemoveCartItem(CartItem item, Guna2Panel panel)
         {
             SharedCart.Items.Remove(item);
             flowLayoutPanel1.Controls.Remove(panel);
             Payment();
         }
+        public void RemoveCartItem(CartItem existingItem)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        //=================add DecrementCart=======================>
         public void DecrementCartItem(CartItem item, Label lblQty, Guna2Panel panel)
         {
             item.qty--;
@@ -203,7 +218,8 @@ namespace PizzaCompany.FormSidbarController
             }
             Payment();
         }
-
+        //====================For Refresh==========================>
+        
 
         public void RefreshCartUI()
         {
@@ -213,21 +229,18 @@ namespace PizzaCompany.FormSidbarController
                 AddCartCard(item);
             }
             Payment();
-
+            contform.AddMenuControls(new PizzaForm(), PanelMenuContainner);
         }
 
-        //=================================================>
-
+        //==================Calculate Total payment===============================>
 
         public string Subtotals { get; set; }
         public string Totals { get; set; }
         public decimal subtotal = 0;
-        public decimal tax = 0;
+        public decimal vat = 0;
         public decimal total = 0;
 
-
-
-        public void Payment()
+        public  void Payment()
         {
             subtotal = 0;
 
@@ -238,15 +251,14 @@ namespace PizzaCompany.FormSidbarController
                     subtotal += price * item.qty;
                 }
             }
-
-            tax = subtotal * 0.10m; // 10% tax
-            total = subtotal - tax;
+            vat = subtotal * 0.10m;
+            total = subtotal - vat ;
 
             Subtotals = subtotal.ToString("0.00");
             Totals = total.ToString("0.00");
 
             Subtotal.Text = $"${Subtotals}";
-            Tax.Text = $"${tax:0.00}";
+            Tax.Text = $"$(10%)";
             Total.Text = $"${Totals}";
         }
 
@@ -254,7 +266,9 @@ namespace PizzaCompany.FormSidbarController
 
 
 
-        //=================================================>
+        //====================All btn Event=============================>
+
+
 
 
 
@@ -264,6 +278,7 @@ namespace PizzaCompany.FormSidbarController
         {
 
             contform.AddMenuControls(new PizzaForm(), PanelMenuContainner);
+      
 
         }
 
@@ -320,28 +335,30 @@ namespace PizzaCompany.FormSidbarController
             contform.AddControlsSidebar(new BeverageForm(), PanelMenuContainner);
         }
 
+
+
+
         private void btnplaceorder_Click(object sender, EventArgs e)
         {
-            SessionClass.CurrentCustomerId = 0;
+
+
+
 
             if (SharedCart.Items.Count == 0)
             {
                 MessageBox.Show("Cart is empty!");
                 return;
             }
+            else
+            {
+                permission.ShowDialog();
 
-            Transaction t = new Transaction(SharedCart.Items);
-            t.ShowDialog();
-
-        }
-
-
-
-
-
-        internal void RemoveCartItem(CartItem existingItem)
-        {
-            throw new NotImplementedException();
+                if (permission.popup == true)
+                {
+                    Transaction t = new Transaction(SharedCart.Items);
+                    t.ShowDialog();
+                }
+            }
         }
 
         private void btnDinin_Click(object sender, EventArgs e)
@@ -353,15 +370,64 @@ namespace PizzaCompany.FormSidbarController
 
             MessageBox.Show("Order type set to Dine-in.");
         }
+        private void btnDelivery_Click(object sender, EventArgs e)
+        {
+
+            foreach (var item in SharedCart.Items)
+            {
+                item.dine_in = "Delivery";
+            }
+
+            MessageBox.Show("Order type set to Delivery.");
+
+        }
+
+        private void btnCarryout_Click(object sender, EventArgs e)
+        {
+            foreach (var item in SharedCart.Items)
+            {
+                item.dine_in = "CarryOut";
+            }
+
+            MessageBox.Show("Order type set to Carry Out.");
+
+        }
+
+
 
         private void btnpayLater_Click(object sender, EventArgs e)
         {
             foreach (var item in SharedCart.Items)
             {
-                item.dine_in = "Pay Later";
+                item.payment = "Pending";
             }
 
-            MessageBox.Show("Order type set to Dine-in.");
+            MessageBox.Show("Order type set to Pay Latter.");
+        }
+
+
+
+        private void btnCash_Click(object sender, EventArgs e)
+        {
+            foreach (var item in SharedCart.Items)
+            {
+                item.payment = "Success";
+            }
+
+            MessageBox.Show("Order type set to Cash.");
+
+        }
+
+        private void btnCredit_Click(object sender, EventArgs e)
+        {
+
+            foreach (var item in SharedCart.Items)
+            {
+                item.payment = "Success";
+            }
+
+            MessageBox.Show("Order type set to Credit Cart.");
+
         }
     }
 }

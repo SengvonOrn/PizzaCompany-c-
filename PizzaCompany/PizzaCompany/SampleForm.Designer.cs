@@ -51,9 +51,9 @@
             this.textTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textTitle.Location = new System.Drawing.Point(31, 11);
             this.textTitle.Name = "textTitle";
-            this.textTitle.Size = new System.Drawing.Size(125, 25);
+            this.textTitle.Size = new System.Drawing.Size(117, 25);
             this.textTitle.TabIndex = 6;
-            this.textTitle.Text = "Add Products";
+            this.textTitle.Text = "Add Product";
             // 
             // label1
             // 

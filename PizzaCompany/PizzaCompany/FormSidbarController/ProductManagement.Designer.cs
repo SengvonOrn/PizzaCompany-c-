@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.dgSno = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,7 +38,10 @@
             this.dgName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgCate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pgroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgImg = new System.Windows.Forms.DataGridViewImageColumn();
+            this.cmd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvedit = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgdelet = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
@@ -77,18 +81,21 @@
             this.dgName,
             this.dgCate,
             this.dgPrice,
+            this.pSize,
+            this.pgroup,
             this.dgImg,
+            this.cmd,
             this.dgvedit,
             this.dgdelet});
             this.guna2DataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.Location = new System.Drawing.Point(36, 203);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
@@ -123,75 +130,101 @@
             // 
             // dgSno
             // 
-            this.dgSno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dgSno.FillWeight = 70F;
             this.dgSno.HeaderText = "Sr#";
             this.dgSno.MinimumWidth = 70;
             this.dgSno.Name = "dgSno";
             this.dgSno.ReadOnly = true;
-            this.dgSno.Width = 70;
             // 
             // dgvid
             // 
+            this.dgvid.FillWeight = 30F;
             this.dgvid.HeaderText = "id";
-            this.dgvid.MinimumWidth = 6;
+            this.dgvid.MinimumWidth = 30;
             this.dgvid.Name = "dgvid";
             this.dgvid.ReadOnly = true;
             this.dgvid.Visible = false;
             // 
             // dgName
             // 
+            this.dgName.FillWeight = 60F;
             this.dgName.HeaderText = "Name";
-            this.dgName.MinimumWidth = 6;
+            this.dgName.MinimumWidth = 60;
             this.dgName.Name = "dgName";
             this.dgName.ReadOnly = true;
             // 
             // dgCate
             // 
+            this.dgCate.FillWeight = 70F;
             this.dgCate.HeaderText = "Category";
-            this.dgCate.MinimumWidth = 6;
+            this.dgCate.MinimumWidth = 70;
             this.dgCate.Name = "dgCate";
             this.dgCate.ReadOnly = true;
             // 
             // dgPrice
             // 
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Blue;
+            this.dgPrice.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgPrice.FillWeight = 70F;
             this.dgPrice.HeaderText = "Price";
-            this.dgPrice.MinimumWidth = 6;
+            this.dgPrice.MinimumWidth = 70;
             this.dgPrice.Name = "dgPrice";
             this.dgPrice.ReadOnly = true;
             // 
+            // pSize
+            // 
+            this.pSize.FillWeight = 70F;
+            this.pSize.HeaderText = "Size";
+            this.pSize.MinimumWidth = 70;
+            this.pSize.Name = "pSize";
+            this.pSize.ReadOnly = true;
+            // 
+            // pgroup
+            // 
+            this.pgroup.FillWeight = 70F;
+            this.pgroup.HeaderText = "Group";
+            this.pgroup.MinimumWidth = 70;
+            this.pgroup.Name = "pgroup";
+            this.pgroup.ReadOnly = true;
+            // 
             // dgImg
             // 
+            this.dgImg.FillWeight = 70F;
             this.dgImg.HeaderText = "Image";
             this.dgImg.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.dgImg.MinimumWidth = 75;
+            this.dgImg.MinimumWidth = 70;
             this.dgImg.Name = "dgImg";
             this.dgImg.ReadOnly = true;
             this.dgImg.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
+            // cmd
+            // 
+            this.cmd.FillWeight = 70F;
+            this.cmd.HeaderText = "Command";
+            this.cmd.MinimumWidth = 70;
+            this.cmd.Name = "cmd";
+            this.cmd.ReadOnly = true;
+            // 
             // dgvedit
             // 
-            this.dgvedit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dgvedit.FillWeight = 50F;
-            this.dgvedit.HeaderText = "";
+            this.dgvedit.HeaderText = "Edited";
             this.dgvedit.Image = global::PizzaCompany.Properties.Resources.edit;
             this.dgvedit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dgvedit.MinimumWidth = 50;
             this.dgvedit.Name = "dgvedit";
             this.dgvedit.ReadOnly = true;
-            this.dgvedit.Width = 50;
             // 
             // dgdelet
             // 
-            this.dgdelet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dgdelet.FillWeight = 50F;
-            this.dgdelet.HeaderText = "";
+            this.dgdelet.HeaderText = "Deleted";
             this.dgdelet.Image = global::PizzaCompany.Properties.Resources.trash;
             this.dgdelet.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.dgdelet.MinimumWidth = 50;
             this.dgdelet.Name = "dgdelet";
             this.dgdelet.ReadOnly = true;
-            this.dgdelet.Width = 50;
             // 
             // ProductManagement
             // 
@@ -219,7 +252,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgName;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgCate;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pSize;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pgroup;
         private System.Windows.Forms.DataGridViewImageColumn dgImg;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cmd;
         private System.Windows.Forms.DataGridViewImageColumn dgvedit;
         private System.Windows.Forms.DataGridViewImageColumn dgdelet;
     }

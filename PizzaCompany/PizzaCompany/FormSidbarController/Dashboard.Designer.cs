@@ -41,10 +41,13 @@
             this.btnBuffPizza = new Guna.UI2.WinForms.Guna2Button();
             this.PanelMenuContainner = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnDinin = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCarryout = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDelivery = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnpayLater = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button15 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCredit = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCash = new Guna.UI2.WinForms.Guna2Button();
             this.btnplaceorder = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.Total = new System.Windows.Forms.Label();
@@ -164,7 +167,7 @@
             this.btnDesserts.Name = "btnDesserts";
             this.btnDesserts.Size = new System.Drawing.Size(205, 93);
             this.btnDesserts.TabIndex = 0;
-            this.btnDesserts.Text = "DSSERTS";
+            this.btnDesserts.Text = "DESSERTS";
             this.btnDesserts.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
             this.btnDesserts.UseTransparentBackground = true;
             this.btnDesserts.Click += new System.EventHandler(this.btnDesserts_Click);
@@ -280,7 +283,7 @@
             this.btnPizza.Name = "btnPizza";
             this.btnPizza.Size = new System.Drawing.Size(204, 93);
             this.btnPizza.TabIndex = 0;
-            this.btnPizza.Text = "PIZZA";
+            this.btnPizza.Text = "Pizza";
             this.btnPizza.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
             this.btnPizza.UseTransparentBackground = true;
             this.btnPizza.Click += new System.EventHandler(this.btnPizza_Click);
@@ -387,6 +390,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel4.BackColor = System.Drawing.Color.White;
+            this.guna2Panel4.Controls.Add(this.btnDinin);
+            this.guna2Panel4.Controls.Add(this.btnCarryout);
+            this.guna2Panel4.Controls.Add(this.btnDelivery);
             this.guna2Panel4.Controls.Add(this.guna2Panel6);
             this.guna2Panel4.Controls.Add(this.btnplaceorder);
             this.guna2Panel4.Controls.Add(this.guna2Separator1);
@@ -404,26 +410,6 @@
             this.guna2Panel4.Size = new System.Drawing.Size(381, 944);
             this.guna2Panel4.TabIndex = 0;
             // 
-            // guna2Panel6
-            // 
-            this.guna2Panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Panel6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.guna2Panel6.BorderRadius = 3;
-            this.guna2Panel6.BorderThickness = 1;
-            this.guna2Panel6.Controls.Add(this.btnDinin);
-            this.guna2Panel6.Controls.Add(this.btnpayLater);
-            this.guna2Panel6.Controls.Add(this.guna2Button15);
-            this.guna2Panel6.FillColor = System.Drawing.Color.White;
-            this.guna2Panel6.Location = new System.Drawing.Point(13, 687);
-            this.guna2Panel6.Name = "guna2Panel6";
-            this.guna2Panel6.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.guna2Panel6.ShadowDecoration.Enabled = true;
-            this.guna2Panel6.Size = new System.Drawing.Size(357, 96);
-            this.guna2Panel6.TabIndex = 4;
-            this.guna2Panel6.UseTransparentBackground = true;
-            // 
             // btnDinin
             // 
             this.btnDinin.Animated = true;
@@ -438,12 +424,76 @@
             this.btnDinin.FillColor = System.Drawing.Color.White;
             this.btnDinin.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDinin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnDinin.Location = new System.Drawing.Point(22, 21);
+            this.btnDinin.Location = new System.Drawing.Point(13, 610);
             this.btnDinin.Name = "btnDinin";
-            this.btnDinin.Size = new System.Drawing.Size(114, 54);
+            this.btnDinin.Size = new System.Drawing.Size(139, 54);
             this.btnDinin.TabIndex = 3;
             this.btnDinin.Text = "Dine-in";
             this.btnDinin.Click += new System.EventHandler(this.btnDinin_Click);
+            // 
+            // btnCarryout
+            // 
+            this.btnCarryout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCarryout.Animated = true;
+            this.btnCarryout.BorderColor = System.Drawing.Color.Silver;
+            this.btnCarryout.BorderRadius = 3;
+            this.btnCarryout.BorderThickness = 1;
+            this.btnCarryout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCarryout.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCarryout.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCarryout.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCarryout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCarryout.FillColor = System.Drawing.Color.White;
+            this.btnCarryout.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCarryout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnCarryout.Location = new System.Drawing.Point(238, 610);
+            this.btnCarryout.Name = "btnCarryout";
+            this.btnCarryout.Size = new System.Drawing.Size(123, 54);
+            this.btnCarryout.TabIndex = 3;
+            this.btnCarryout.Text = "Carry Out";
+            this.btnCarryout.Click += new System.EventHandler(this.btnCarryout_Click);
+            // 
+            // btnDelivery
+            // 
+            this.btnDelivery.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDelivery.Animated = true;
+            this.btnDelivery.BorderColor = System.Drawing.Color.Silver;
+            this.btnDelivery.BorderRadius = 3;
+            this.btnDelivery.BorderThickness = 1;
+            this.btnDelivery.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelivery.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelivery.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelivery.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDelivery.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDelivery.FillColor = System.Drawing.Color.White;
+            this.btnDelivery.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDelivery.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnDelivery.Location = new System.Drawing.Point(137, 610);
+            this.btnDelivery.Name = "btnDelivery";
+            this.btnDelivery.Size = new System.Drawing.Size(116, 54);
+            this.btnDelivery.TabIndex = 3;
+            this.btnDelivery.Text = "Delivery";
+            this.btnDelivery.Click += new System.EventHandler(this.btnDelivery_Click);
+            // 
+            // guna2Panel6
+            // 
+            this.guna2Panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Panel6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2Panel6.BorderRadius = 3;
+            this.guna2Panel6.BorderThickness = 1;
+            this.guna2Panel6.Controls.Add(this.btnpayLater);
+            this.guna2Panel6.Controls.Add(this.btnCredit);
+            this.guna2Panel6.Controls.Add(this.btnCash);
+            this.guna2Panel6.FillColor = System.Drawing.Color.White;
+            this.guna2Panel6.Location = new System.Drawing.Point(13, 682);
+            this.guna2Panel6.Name = "guna2Panel6";
+            this.guna2Panel6.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2Panel6.ShadowDecoration.Enabled = true;
+            this.guna2Panel6.Size = new System.Drawing.Size(357, 84);
+            this.guna2Panel6.TabIndex = 4;
+            this.guna2Panel6.UseTransparentBackground = true;
             // 
             // btnpayLater
             // 
@@ -460,38 +510,59 @@
             this.btnpayLater.FillColor = System.Drawing.Color.White;
             this.btnpayLater.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnpayLater.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnpayLater.Location = new System.Drawing.Point(226, 21);
+            this.btnpayLater.Location = new System.Drawing.Point(225, 16);
             this.btnpayLater.Name = "btnpayLater";
-            this.btnpayLater.Size = new System.Drawing.Size(111, 54);
+            this.btnpayLater.Size = new System.Drawing.Size(123, 54);
             this.btnpayLater.TabIndex = 3;
             this.btnpayLater.Text = "PayLater";
             this.btnpayLater.Click += new System.EventHandler(this.btnpayLater_Click);
             // 
-            // guna2Button15
+            // btnCredit
             // 
-            this.guna2Button15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Button15.Animated = true;
-            this.guna2Button15.BorderColor = System.Drawing.Color.Silver;
-            this.guna2Button15.BorderRadius = 3;
-            this.guna2Button15.BorderThickness = 1;
-            this.guna2Button15.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2Button15.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button15.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button15.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button15.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button15.FillColor = System.Drawing.Color.White;
-            this.guna2Button15.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.guna2Button15.Location = new System.Drawing.Point(156, 21);
-            this.guna2Button15.Name = "guna2Button15";
-            this.guna2Button15.Size = new System.Drawing.Size(52, 54);
-            this.guna2Button15.TabIndex = 3;
-            this.guna2Button15.Text = "ChashCart";
+            this.btnCredit.Animated = true;
+            this.btnCredit.BorderColor = System.Drawing.Color.Silver;
+            this.btnCredit.BorderRadius = 3;
+            this.btnCredit.BorderThickness = 1;
+            this.btnCredit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCredit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCredit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCredit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCredit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCredit.FillColor = System.Drawing.Color.White;
+            this.btnCredit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCredit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnCredit.Location = new System.Drawing.Point(9, 16);
+            this.btnCredit.Name = "btnCredit";
+            this.btnCredit.Size = new System.Drawing.Size(130, 54);
+            this.btnCredit.TabIndex = 3;
+            this.btnCredit.Text = "Credit Cart";
+            this.btnCredit.Click += new System.EventHandler(this.btnCredit_Click);
+            // 
+            // btnCash
+            // 
+            this.btnCash.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCash.Animated = true;
+            this.btnCash.BorderColor = System.Drawing.Color.Silver;
+            this.btnCash.BorderRadius = 3;
+            this.btnCash.BorderThickness = 1;
+            this.btnCash.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCash.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCash.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCash.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCash.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCash.FillColor = System.Drawing.Color.White;
+            this.btnCash.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCash.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnCash.Location = new System.Drawing.Point(124, 16);
+            this.btnCash.Name = "btnCash";
+            this.btnCash.Size = new System.Drawing.Size(116, 54);
+            this.btnCash.TabIndex = 3;
+            this.btnCash.Text = "Chash";
+            this.btnCash.Click += new System.EventHandler(this.btnCash_Click);
             // 
             // btnplaceorder
             // 
-            this.btnplaceorder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnplaceorder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnplaceorder.BackColor = System.Drawing.Color.Transparent;
             this.btnplaceorder.BorderColor = System.Drawing.Color.Transparent;
@@ -505,7 +576,7 @@
             this.btnplaceorder.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(31)))), ((int)(((byte)(242)))));
             this.btnplaceorder.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnplaceorder.ForeColor = System.Drawing.Color.White;
-            this.btnplaceorder.Location = new System.Drawing.Point(13, 810);
+            this.btnplaceorder.Location = new System.Drawing.Point(13, 787);
             this.btnplaceorder.Name = "btnplaceorder";
             this.btnplaceorder.Size = new System.Drawing.Size(357, 67);
             this.btnplaceorder.TabIndex = 3;
@@ -518,7 +589,7 @@
             this.guna2Separator1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Separator1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2Separator1.Location = new System.Drawing.Point(19, 617);
+            this.guna2Separator1.Location = new System.Drawing.Point(22, 540);
             this.guna2Separator1.Name = "guna2Separator1";
             this.guna2Separator1.Size = new System.Drawing.Size(343, 11);
             this.guna2Separator1.TabIndex = 2;
@@ -528,7 +599,7 @@
             this.Total.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Total.AutoSize = true;
             this.Total.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Total.Location = new System.Drawing.Point(303, 631);
+            this.Total.Location = new System.Drawing.Point(306, 554);
             this.Total.Name = "Total";
             this.Total.Size = new System.Drawing.Size(59, 23);
             this.Total.TabIndex = 1;
@@ -539,7 +610,7 @@
             this.Tax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Tax.AutoSize = true;
             this.Tax.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tax.Location = new System.Drawing.Point(299, 578);
+            this.Tax.Location = new System.Drawing.Point(302, 501);
             this.Tax.Name = "Tax";
             this.Tax.Size = new System.Drawing.Size(50, 23);
             this.Tax.TabIndex = 1;
@@ -549,7 +620,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(17, 641);
+            this.label10.Location = new System.Drawing.Point(20, 564);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(46, 23);
             this.label10.TabIndex = 1;
@@ -559,18 +630,18 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(17, 578);
+            this.label7.Location = new System.Drawing.Point(20, 501);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(34, 23);
+            this.label7.Size = new System.Drawing.Size(35, 23);
             this.label7.TabIndex = 1;
-            this.label7.Text = "Tax";
+            this.label7.Text = "Vat";
             // 
             // Subtotal
             // 
             this.Subtotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Subtotal.AutoSize = true;
             this.Subtotal.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Subtotal.Location = new System.Drawing.Point(299, 533);
+            this.Subtotal.Location = new System.Drawing.Point(302, 456);
             this.Subtotal.Name = "Subtotal";
             this.Subtotal.Size = new System.Drawing.Size(59, 23);
             this.Subtotal.TabIndex = 1;
@@ -580,7 +651,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(17, 533);
+            this.label6.Location = new System.Drawing.Point(20, 456);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(81, 23);
             this.label6.TabIndex = 1;
@@ -590,7 +661,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(14, 484);
+            this.label5.Location = new System.Drawing.Point(17, 407);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(172, 28);
             this.label5.TabIndex = 1;
@@ -613,7 +684,7 @@
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(5, 44);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(371, 419);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(371, 338);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // Dashboard
@@ -626,7 +697,7 @@
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Dashboard";
-            this.Text = "Dashboard";
+            this.Text = "7";
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel4.ResumeLayout(false);
@@ -665,6 +736,9 @@
         private Guna.UI2.WinForms.Guna2Button btnplaceorder;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
         private Guna.UI2.WinForms.Guna2Button btnDinin;
-        private Guna.UI2.WinForms.Guna2Button guna2Button15;
+        private Guna.UI2.WinForms.Guna2Button btnCash;
+        private Guna.UI2.WinForms.Guna2Button btnDelivery;
+        private Guna.UI2.WinForms.Guna2Button btnCredit;
+        private Guna.UI2.WinForms.Guna2Button btnCarryout;
     }
 }

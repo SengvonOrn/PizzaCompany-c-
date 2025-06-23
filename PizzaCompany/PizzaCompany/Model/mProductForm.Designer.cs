@@ -36,6 +36,10 @@
             this.pPrice = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.pSize = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.pGroup = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cmd = new System.Windows.Forms.RichTextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pImageSet)).BeginInit();
             this.SuspendLayout();
@@ -50,6 +54,7 @@
             // btnBrows
             // 
             this.btnBrows.AutoRoundedCorners = true;
+            this.btnBrows.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBrows.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnBrows.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnBrows.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -65,10 +70,10 @@
             // 
             // pImageSet
             // 
-            this.pImageSet.BackColor = System.Drawing.Color.Turquoise;
+            this.pImageSet.BackColor = System.Drawing.Color.White;
             this.pImageSet.BorderRadius = 3;
             this.pImageSet.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pImageSet.Image = global::PizzaCompany.Properties.Resources.product_photo;
+            this.pImageSet.Image = global::PizzaCompany.Properties.Resources.empy;
             this.pImageSet.ImageRotate = 0F;
             this.pImageSet.Location = new System.Drawing.Point(799, 162);
             this.pImageSet.Name = "pImageSet";
@@ -88,14 +93,21 @@
             this.pCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.pCategory.ItemHeight = 30;
             this.pCategory.Items.AddRange(new object[] {
-            "Pizaa",
+            "Pizza",
+            "Buff Pizza",
+            "Bite Pizza",
+            "Main Bish",
+            "Checken",
+            "Salad",
+            "Kit Menu",
             "Appetzer",
-            "Bite",
-            "Ice"});
-            this.pCategory.Location = new System.Drawing.Point(46, 291);
+            "Desserts",
+            "Beverage"});
+            this.pCategory.Location = new System.Drawing.Point(46, 262);
             this.pCategory.Name = "pCategory";
             this.pCategory.Size = new System.Drawing.Size(326, 36);
             this.pCategory.TabIndex = 4;
+            this.pCategory.SelectedIndexChanged += new System.EventHandler(this.pCategory_SelectedIndexChanged);
             // 
             // pName
             // 
@@ -156,17 +168,68 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(55, 260);
+            this.label4.Location = new System.Drawing.Point(55, 226);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 16);
             this.label4.TabIndex = 6;
             this.label4.Text = "Category";
+            // 
+            // pSize
+            // 
+            this.pSize.BackColor = System.Drawing.Color.Transparent;
+            this.pSize.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.pSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.pSize.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.pSize.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.pSize.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.pSize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.pSize.ItemHeight = 30;
+            this.pSize.Location = new System.Drawing.Point(46, 328);
+            this.pSize.Name = "pSize";
+            this.pSize.Size = new System.Drawing.Size(140, 36);
+            this.pSize.TabIndex = 7;
+            // 
+            // pGroup
+            // 
+            this.pGroup.BackColor = System.Drawing.Color.Transparent;
+            this.pGroup.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.pGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.pGroup.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.pGroup.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.pGroup.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.pGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.pGroup.ItemHeight = 30;
+            this.pGroup.Location = new System.Drawing.Point(192, 328);
+            this.pGroup.Name = "pGroup";
+            this.pGroup.Size = new System.Drawing.Size(180, 36);
+            this.pGroup.TabIndex = 8;
+            // 
+            // cmd
+            // 
+            this.cmd.Location = new System.Drawing.Point(398, 262);
+            this.cmd.Name = "cmd";
+            this.cmd.Size = new System.Drawing.Size(326, 102);
+            this.cmd.TabIndex = 10;
+            this.cmd.Text = "";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(407, 226);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(69, 16);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Command";
             // 
             // mProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1078, 604);
+            this.Controls.Add(this.cmd);
+            this.Controls.Add(this.pGroup);
+            this.Controls.Add(this.pSize);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -187,12 +250,16 @@
 
         #endregion
         private Guna.UI2.WinForms.Guna2Button btnBrows;
-        private Guna.UI2.WinForms.Guna2PictureBox pImageSet;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         public Guna.UI2.WinForms.Guna2ComboBox pCategory;
         public Guna.UI2.WinForms.Guna2TextBox pName;
         public Guna.UI2.WinForms.Guna2TextBox pPrice;
+        public Guna.UI2.WinForms.Guna2ComboBox pSize;
+        public Guna.UI2.WinForms.Guna2ComboBox pGroup;
+        public Guna.UI2.WinForms.Guna2PictureBox pImageSet;
+        public System.Windows.Forms.RichTextBox cmd;
+        private System.Windows.Forms.Label label5;
     }
 }
