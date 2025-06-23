@@ -1,1 +1,1 @@
-This project is sample pos for pizza  company that build with sql server.
+This project is a sample POS for a pizza company built with SQL Server.
