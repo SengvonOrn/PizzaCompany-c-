@@ -25,7 +25,8 @@ The Function of This Project:
   - Show list dashboard Orders with button discounts, and after the order, can set money change(Khmer Riel, Dollar), and print option
 + Stock:
   - Show a list of all stock added, and can update the stock and add stock every day
- <===================================================================================================================================>
+ 
+  ============================>
 
  
  
