@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows;
 using System.Windows.Forms;
 namespace PizzaCompany.FormSidbarController
 {
@@ -81,25 +82,11 @@ namespace PizzaCompany.FormSidbarController
 
             }
 
-
-
-
-
-
-
             if (!string.IsNullOrEmpty(_customerSearch))
             {
                 dateCondition += $" AND c.cName LIKE '%{_customerSearch.Replace("'", "''")}%' ";
 
             }
-
-
-
-
-
-
-
-
 
             if (_onlyUnpaid)
             {
@@ -127,7 +114,7 @@ namespace PizzaCompany.FormSidbarController
 
 
 
-            //===> Selection with condition
+            //===> Selection with condition=============>
 
             string sql = $@"
             SELECT 
@@ -156,11 +143,6 @@ namespace PizzaCompany.FormSidbarController
             ORDER BY {_orderBy};
             ";
 
-
-
-
-            //==> Populate ListBox and grid
-
             ListBox lb = new ListBox();
             lb.Items.Add(oId);
             lb.Items.Add(customer);
@@ -179,6 +161,8 @@ namespace PizzaCompany.FormSidbarController
 
             MainClass.LoadingData(sql, guna2DataGridView1, lb);
 
+
+
             //==>  Check Order Count ==================>
 
         string countSql = $@"
@@ -191,21 +175,21 @@ namespace PizzaCompany.FormSidbarController
 
             //==>
 
-        int thisWeekCount = MainClass.GetOrderCount(@"
+        int thisWeekCount = MainClass.GetOrderCount($@"
         SELECT COUNT(*) FROM OrderTable
         WHERE DATEPART(WEEK, CreatedAt) = DATEPART(WEEK, GETDATE())
         AND DATEPART(YEAR, CreatedAt) = DATEPART(YEAR, GETDATE());");
 
             //==>
 
-        int lastWeekCount = MainClass.GetOrderCount(@"
+        int lastWeekCount = MainClass.GetOrderCount($@"
         SELECT COUNT(*) FROM OrderTable
         WHERE DATEPART(WEEK, CreatedAt) = DATEPART(WEEK, GETDATE()) - 1
         AND DATEPART(YEAR, CreatedAt) = DATEPART(YEAR, GETDATE());");
 
             //==>
 
-            double percentageChange = lastWeekCount > 0 ? ((double)(thisWeekCount - lastWeekCount) / lastWeekCount) * 100 : 0;
+            double percentageChange = lastWeekCount > 0 ? ((double)(lastWeekCount - thisWeekCount) / lastWeekCount) * 100 : 0;
             ThisWeek.Text = $"This Week: {thisWeekCount} Orders";
             LastWeek.Text = $"Last Week: {lastWeekCount} Orders";
             Growth.Text = $"Growth: {percentageChange:+0.00;-0.00;0}%";
@@ -247,7 +231,7 @@ namespace PizzaCompany.FormSidbarController
             {
                 overtimePercentage = ((double)overtimeItemCount / totalOrderCount) * 100;
             }
-            lblOvertimePercentage.Text = $"This Week: {overtimePercentage:0.00}%"; // Format to 2 decimal places
+            lblOvertimePercentage.Text = $"This Week: {overtimePercentage:0.00}%"; 
 
 
             //==> 
@@ -328,43 +312,35 @@ namespace PizzaCompany.FormSidbarController
 
             unpaid.Text = $"Unpaid: {unpaidOrders} ({unpaidPercentage:F2}%)";
 
-            //  bad.Text = $"Bad Orders: {returnCountbad} ({badPercentage:F2}%)";
 
-
-            // Amount Calculations
-
-
-            string totalAmountSql = $@"SELECT ISNULL(SUM(Subtotal), 0) FROM OrderTable o JOIN Custmer c ON o.cId = c.cId {dateCondition}";
+            string totalAmountSql = $@"SELECT ISNULL(SUM(Subtotal), 0) FROM OrderTable o JOIN Custmer c ON o.cId = c.cId {dateCondition.Replace("WHERE", "AND")}";
             decimal totalAmount = Convert.ToDecimal(MainClass.GetScalarValue(totalAmountSql));
 
 
 
 
-            string unpaidAmountSql = $@"SELECT ISNULL(SUM(Subtotal), 0) FROM OrderTable o JOIN Custmer c ON o.cId = c.cId WHERE o.DineType = 'Pay Later' {dateCondition.Replace("WHERE", "AND")}";
+            string unpaidAmountSql = $@"SELECT ISNULL(SUM(Subtotal), 0) FROM OrderTable o JOIN Custmer c ON o.cId = c.cId WHERE o.payment = 'Pending' {dateCondition.Replace("WHERE", "AND")}";
             decimal unpaidAmount = Convert.ToDecimal(MainClass.GetScalarValue(unpaidAmountSql));
+
+            string Total = $@"SELECT ISNULL(SUM(Total), 0) FROM OrderTable o JOIN Custmer c ON o.cId = c.cId WHERE o.payment = 'Success' {dateCondition.Replace("WHERE", "AND")}";
+            decimal getTotal = Convert.ToDecimal(MainClass.GetScalarValue(Total));
+            netSale.Text = $"Net Sale (After 10% Tax): ${getTotal:N2}";
+
 
 
             decimal netRevenuecalculate = totalAmount - unpaidAmount;
-            decimal getNetsale = netRevenuecalculate - badOrders;
+      
 
-
-
-            decimal taxRate = 0.10m;
-            decimal taxAmount = getNetsale * taxRate;
-            decimal finalRevenue = getNetsale - taxAmount;
-
-
-            amounttotalPrice.Text = $"Sale: ${getNetsale:N2}";
+            amounttotalPrice.Text = $"Sale: ${netRevenuecalculate:N2}";
 
 
 
 
 
-            label2.Text = $"Net Sale (After 10% Tax): ${finalRevenue:N2}";
 
 
 
-            decimal netSalePercentage = totalAmount > 0 ? (getNetsale / totalAmount) * 100 : 0;
+            decimal netSalePercentage = totalAmount > 0 ? (netRevenuecalculate / totalAmount) * 100 : 0;
             thisweeksale.Text = $"This Week: {netSalePercentage:F2}%";
 
 
@@ -518,7 +494,7 @@ namespace PizzaCompany.FormSidbarController
         {
 
             GetData();
-            //Hover.ColorActionCells(guna2DataGridView1);
+   
             searchOrder.Text = "";
             btnSchedul.SelectedIndex = 0;
             btnDatetime.Checked = false;
@@ -537,7 +513,7 @@ namespace PizzaCompany.FormSidbarController
 
             if (guna2DataGridView1 == null || guna2DataGridView1 == null)
                 return;
-            string columnName = guna2DataGridView1.CurrentCell.OwningColumn.Name;
+                string columnName = guna2DataGridView1.CurrentCell.OwningColumn.Name;
 
             if (columnName == "order")
             {
@@ -547,7 +523,6 @@ namespace PizzaCompany.FormSidbarController
             MainClass.UpdateAction(id);
             GetData();
 
-            //Hover.ColorActionCells(guna2DataGridView1);
 
 
             }

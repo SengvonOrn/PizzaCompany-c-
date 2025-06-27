@@ -283,6 +283,16 @@ namespace PizzaCompany.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap messageBox {
+            get {
+                object obj = ResourceManager.GetObject("messageBox", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap OderMwhite {
             get {
                 object obj = ResourceManager.GetObject("OderMwhite", resourceCulture);
@@ -316,6 +326,16 @@ namespace PizzaCompany.Properties {
         internal static System.Drawing.Bitmap payment_method {
             get {
                 object obj = ResourceManager.GetObject("payment-method", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pizza {
+            get {
+                object obj = ResourceManager.GetObject("Pizza", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

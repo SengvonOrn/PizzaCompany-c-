@@ -47,7 +47,34 @@ namespace PizzaCompany.Model
 
            public string action { get; set; } = "good";
 
-    
+           public int DiscountPercent { get; set; }
+        public void Clear()
+        {
+            pId = "";
+            cCustomer = "";
+            cPhone = "";
+            cAddress = "";
+            Name = "";
+            dine_in = "Dine-in";
+            payment = "Pending";
+            dese = "";
+            Price = "0";
+            qty = 0;
+            Size = "";
+            ProductImage = null;
+            Crosst = "";
+            cityregion = "";
+            CR = "";
+            Post = "";
+            Dl = "";
+            Isc = "";
+            extention = "";
+            suit = "";
+            action = "good";
+            DiscountPercent = 0;
+        }
+
+
     }
-    
-}
+   
+  }

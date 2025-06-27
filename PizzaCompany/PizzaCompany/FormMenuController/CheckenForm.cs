@@ -5,32 +5,33 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using static PizzaCompany.Helper.SessionClass;
 namespace PizzaCompany.FormMenuController
 {
     public partial class CheckenForm : Form
     {
-        private FlowLayoutPanel flowPanel;
-        private void SetupFlowPanel()
-        {
-            flowPanel = new FlowLayoutPanel
-            {
-                Dock = DockStyle.Fill,
-                AutoScroll = true,
-                WrapContents = true,
-                FlowDirection = FlowDirection.LeftToRight
-            };
-            this.Controls.Add(flowPanel);
-        }
-
+  
         public int id = SessionClass.CurrentCustomerId;
 
         public CheckenForm()
         {
             InitializeComponent();
-            SetupFlowPanel();
+
         }
-       
+
+        private string myselectOption;
+        private void selectOptions_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            myselectOption = selectOptions.SelectedItem.ToString();
+            Getdata();
+
+        }
+        private void btnAll_Click(object sender, EventArgs e)
+        {
+ 
+            myselectOption = "clear";
+            myselectOption = Convert.ToString(selectOptions.SelectedIndex = 0);
+            Getdata();
+        }
 
         private void searchMenu_TextChanged(object sender, EventArgs e)
         {
@@ -42,14 +43,14 @@ namespace PizzaCompany.FormMenuController
             flowLayoutPanel1.Controls.Clear();
 
             MainClass mainClass = new MainClass();
-            List<ProductModel> products = mainClass.GetProductsBySearch(searchMenu.Text, "Checken", "", "");
+            List<ProductModel> products = mainClass.GetProductsBySearch(searchMenu.Text, "Checken", myselectOption, "");
 
             foreach (var product in products)
             {
                 Panel productPanel = new Panel
                 {
-                    Width = 390,
-                    Height = 220,
+                    Width = 265,
+                    Height = 250,
                     BorderStyle = BorderStyle.FixedSingle,
                     Margin = new Padding(10),
                     BackColor = Color.White
@@ -59,57 +60,57 @@ namespace PizzaCompany.FormMenuController
                 PictureBox pictureBox = new PictureBox
                 {
                     Image = convertTo.Imageconvert(product.ImageBytes) ?? Properties.Resources.empy,
-                    Width = 230,
-                    Height = 150,
-
-                    Location = new Point(-3, 15),
+                    Width = 270,
+                    Height = 160,
+                    Location = new Point(0, 0),
                     BackColor = Color.Transparent,
                     SizeMode = PictureBoxSizeMode.Zoom
+                    , Cursor = Cursors.Hand,
                 };
                 Label lblName = new Label
                 {
                     Text = product.Name,
                     Font = new Font("Arial", 10, FontStyle.Bold),
-                    Location = new Point(228, 15),
+                    Location = new Point(10, 180),
                     BackColor = Color.Transparent,
-                    Size = new Size(160, 20),
-                    Width = 200
-                };
-                Label lblCategory = new Label
-                {
-                    Text = product.command,
-                    Location = new Point(228, 40),
-                    Size = new Size(150, 100),
-                    BackColor = Color.Transparent,
-                    Margin = new Padding(10),
+                    Size = new Size(230, 20),
                     AutoSize = false,
                     AutoEllipsis = true,
-                    Font = new Font("Segoe UI", 9)
+
                 };
+
                 Label lblPrice = new Label
                 {
                     Text = "$" + product.Price,
-                    Location = new Point(10, 180),
+                    Location = new Point(10, 205),
                     Font = new Font("Segoe UI", 12, FontStyle.Bold),
                     BackColor = Color.Transparent,
                     Width = 50
                 };
-                Button addButton = new Button
+
+
+
+
+                Label lblSize = new Label
                 {
-                    Text = "Add",
-                    Location = new Point(280, 160),
-                    Width = 100,
-                    Height = 50,
-                    BackColor = Color.SkyBlue
+                Text = int.TryParse(product.Size, out int size)
+                ? (size == 6   ? "6Pcs" : size == 10 ? "10Pcs" : "") : "",
+                    Location = new Point(218, 215),
+                    BackColor = Color.Transparent,
+                    Font = new Font("Segoe UI", 12, FontStyle.Regular),
+                    Width = 50
                 };
+
+          
+          
                 string productName = product.Name;
-                //string productDesc = product.command;
                 string productPrice = product.Price.ToString();
                 Image productImage = pictureBox.Image;
                 string pId = product.pId;
+                string productSize = product.Size;
                 //=======================================>
 
-                addButton.Click += (s, ev) =>
+                pictureBox.Click += (s, ev) =>
                 {
 
                     if (id == 0)
@@ -124,7 +125,7 @@ namespace PizzaCompany.FormMenuController
                         if (existingItem != null)
                         {
                             existingItem.qty += 1;
-                            Dashboard.Instance.UpdateCartCard(existingItem);
+                            OrderPage.Instance.UpdateCartCard(existingItem);
                         }
                         else
                         {
@@ -146,28 +147,22 @@ namespace PizzaCompany.FormMenuController
                                 Name = productName,
                                 //dese = productDesc,
                                 Price = productPrice,
-                                Size = "",
+                                Size = productSize,
                                 qty = 1,
                                 ProductImage = product.ImageBytes
                             };
 
                             SharedCart.Items.Add(item);
-                            Dashboard.Instance.AddCartCard(item);
+                            OrderPage.Instance.AddCartCard(item);
                         }
 
                     }
                 };
-
-
                 //=======================================>
-
-
-
                 productPanel.Controls.Add(pictureBox);
-                productPanel.Controls.Add(lblName);
-                productPanel.Controls.Add(lblCategory);
+                productPanel.Controls.Add(lblName);     
                 productPanel.Controls.Add(lblPrice);
-                productPanel.Controls.Add(addButton);
+                productPanel.Controls.Add(lblSize);
                 flowLayoutPanel1.Controls.Add(productPanel);
             }
 
@@ -177,5 +172,7 @@ namespace PizzaCompany.FormMenuController
         {
             Getdata();
         }
+
+   
     }
 }

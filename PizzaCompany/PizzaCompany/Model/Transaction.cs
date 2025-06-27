@@ -7,79 +7,45 @@ using System.Linq;
 using System.Windows.Forms;
 using PizzaCompany.FormSidbarController;
 using PizzaCompany.Helper;
+using PizzaCompany.ultill;
 namespace PizzaCompany.Model
 {
     public partial class Transaction : Form
     {
 
         private List<CartItem> _items;
-        private TextBox txtDetails;
         private PrintDocument printDocument = new PrintDocument();
         private string printContent = "";
-
+        public decimal total = 0;
+        private decimal rielpayment;
         public Transaction(List<CartItem> items)
         {
             InitializeComponent();
             _items = items;
-            SetupUI();
             DisplayItems();
             printDocument.PrintPage += PrintDocument_PrintPage;
+            lblDollar.Text = total.ToString("0.00") + "$";
+            rielpayment = total * 4150;
+            lblRiel.Text = rielpayment.ToString("0.00") + "៛";
+
         }
-
-
-        //============Set Transaction Textbox==========>
-        private void SetupUI()
+        private void btnPrint_Click_1(object sender, EventArgs e)
         {
-            txtDetails = new TextBox
-            {
-                Multiline = true,
-                ScrollBars = ScrollBars.Vertical,
-                Dock = DockStyle.Fill,
-                ReadOnly = true,
-                Font = new Font("Consolas", 10),
-                BackColor = Color.White
-            };
-            this.Controls.Add(txtDetails);
-
-            FlowLayoutPanel panelButtons = new FlowLayoutPanel
-            {
-                Dock = DockStyle.Bottom,
-                Height = 50,
-                FlowDirection = FlowDirection.RightToLeft,
-                Padding = new Padding(5),
-                BackColor = Color.WhiteSmoke
-            };
-
-            Button btnPrint = new Button
-            {
-                Text = "Print Receipt",
-                BackColor = Color.LightGreen,
-                Width = 120,
-                Height = 30
-            };
-
-            btnPrint.Click += BtnPrint_Click;
-            Button btnBack = new Button
-            {
-                Text = "Back",
-                BackColor = Color.LightSalmon,
-                Width = 100,
-                Height = 30
-            };
-
-            btnBack.Click += (s, e) => this.Hide();
-
-
-            panelButtons.Controls.Add(btnPrint);
-            panelButtons.Controls.Add(btnBack);
-            this.Controls.Add(panelButtons);
-
+            BtnPrint_Click();
         }
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+
+
 
         //==========Display Data after Order into TextBox==============>
+    
         private void DisplayItems()
         {
-            decimal total = 0;
+           
             txtDetails.Clear();
             var customer = _items.FirstOrDefault();
             if (customer != null)
@@ -145,39 +111,36 @@ namespace PizzaCompany.Model
 
             }
 
-           
-
-
             foreach (var item in _items)
             {
                 if (decimal.TryParse(item.Price, out decimal price))
                 {
                     decimal subTotal = price * item.qty;
-                    decimal subVat = subTotal * 0.10m;
-                   
+
+                    decimal subVat = subTotal * ShareDiscount.DiscountPercent / 100;
+
                     decimal getTotal = subTotal - subVat;
+
                     total += getTotal;
+
 
                 txtDetails.AppendText($"Item           : {item.Name}\r\n");
                 txtDetails.AppendText($"Qty            : {item.qty}\r\n");
                 txtDetails.AppendText($"Price          : ${item.Price}\r\n");
-
                 if(item.Size != "")
                 {
                 txtDetails.AppendText($"Size           : {item.Size}\r\n");
                 }
-
                 txtDetails.AppendText($"Type           : {item.dine_in}\r\n");
-                txtDetails.AppendText($"Subtotal       : ${subTotal:0.00}\r\n");
-
                 txtDetails.AppendText("----------------------------------------\r\n");
                 }
             }
-                txtDetails.AppendText($"Vat            : 10%\r\n");
+                txtDetails.AppendText($"Discount       : {ShareDiscount.DiscountPercent}%\r\n");
                 txtDetails.AppendText($"TOTAL          : ${total:0.00}\r\n");
                 txtDetails.AppendText("========================================\r\n");
                 txtDetails.AppendText(DateTime.Now.ToString("dd-MMM-yyyy hh:mm") + "\r");
         }
+
 
         //=======================Insert Data Into Database=========================>
 
@@ -187,12 +150,15 @@ namespace PizzaCompany.Model
             foreach (var item in _items)
             {
             string query = @"INSERT INTO OrderTable 
-            (cId, pId, Quantity, Size, payment, DineType, Subtotal, Action) 
+            (cId, pId, Quantity, Size, payment, DineType, Subtotal, Action, Total) 
             VALUES 
-            (@cId, @pId, @Quantity,  @Size, @payment, @DineType, @Subtotal, @Action)";
+            (@cId, @pId, @Quantity,  @Size, @payment, @DineType, @Subtotal, @Action, @Total)";
 
                 decimal price = decimal.TryParse(item.Price, out price) ? price : 0;
-                decimal subtotal = price * item.qty;
+                decimal subTotal = price * item.qty;
+                decimal subVat = subTotal * ShareDiscount.DiscountPercent / 100;
+                decimal getTotal = subTotal - subVat;
+
 
                 Hashtable tb = new Hashtable();
                 tb.Add("@cId", SessionClass.CurrentCustomerId);
@@ -201,9 +167,11 @@ namespace PizzaCompany.Model
                 tb.Add("@Size", item.Size);
                 tb.Add("@DineType", item.dine_in);
                 tb.Add("@payment", item.payment);
-                tb.Add("@Subtotal", subtotal);
+                tb.Add("@Subtotal", subTotal);
                 tb.Add("@Action", item.action);
+                tb.Add("@Total", getTotal);
                 MainClass.SQL(query, tb);
+
             }
         }
 
@@ -211,7 +179,7 @@ namespace PizzaCompany.Model
         //==============BtnPrint Event==========================>
 
 
-        private void BtnPrint_Click(object sender, EventArgs e)
+        private void BtnPrint_Click()
         {
             printContent = txtDetails.Text;
 
@@ -228,9 +196,9 @@ namespace PizzaCompany.Model
                    
                     SharedCart.Items.Clear();
                     
-                    if (Dashboard.Instance != null)
+                    if (OrderPage.Instance != null)
                     {
-                        Dashboard.Instance.RefreshCartUI();
+                        OrderPage.Instance.RefreshCartUI();
                     }
                     MessageBox.Show("Receipt printed. Cart cleared.", "Printed", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -276,5 +244,33 @@ namespace PizzaCompany.Model
                 new RectangleF(textX, textY, e.MarginBounds.Width, e.MarginBounds.Height - textY));
         }
 
+
+
+
+
+
+
+
+   
+        private void guna2TextBox2_TextChanged(object sender, EventArgs e)
+        {
+            formatMoney.GenerateMoney(total, KhmerExchange, dollar, getResult, khmerResult);
+
+
+        }
+
+        private void KhmerExchange_TextChanged(object sender, EventArgs e)
+        {
+            formatMoney.GenerateMoney(total, KhmerExchange, dollar, getResult, khmerResult);
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            KhmerExchange.Text = "";
+            dollar.Text = "";
+            getResult.Text = "";
+            khmerResult.Text = "";
+        }
     }
 }

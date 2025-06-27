@@ -45,7 +45,6 @@ D:\C#Form\companyPizza\PizzaCompany\PizzaCompany\obj\Debug\PizzaCompany.FormMenu
 D:\C#Form\companyPizza\PizzaCompany\PizzaCompany\obj\Debug\PizzaCompany.FormMenuController.MainBishForm.resources
 D:\C#Form\companyPizza\PizzaCompany\PizzaCompany\obj\Debug\PizzaCompany.FormMenuController.PizzaForm.resources
 D:\C#Form\companyPizza\PizzaCompany\PizzaCompany\obj\Debug\PizzaCompany.FormSidbarController.Customer.resources
-D:\C#Form\companyPizza\PizzaCompany\PizzaCompany\obj\Debug\PizzaCompany.FormSidbarController.Dashboard.resources
 D:\C#Form\companyPizza\PizzaCompany\PizzaCompany\obj\Debug\PizzaCompany.FormSidbarController.InventoryForm.resources
 D:\C#Form\companyPizza\PizzaCompany\PizzaCompany\obj\Debug\PizzaCompany.FormSidbarController.OrderManagementForm.resources
 D:\C#Form\companyPizza\PizzaCompany\PizzaCompany\obj\Debug\PizzaCompany.FormSidbarController.ProductManagement.resources
@@ -179,3 +178,6 @@ D:\C#Form\companyPizza\PizzaCompany\PizzaCompany\bin\Debug\TagLibSharp.dll
 D:\C#Form\companyPizza\PizzaCompany\PizzaCompany\bin\Debug\TagLibSharp.pdb
 D:\C#Form\companyPizza\PizzaCompany\PizzaCompany\bin\Debug\TagLibSharp.xml
 D:\C#Form\companyPizza\PizzaCompany\PizzaCompany\obj\Debug\PizzaCompany.csproj.SuggestedBindingRedirects.cache
+D:\C#Form\companyPizza\PizzaCompany\PizzaCompany\obj\Debug\PizzaCompany.FormSidbarController.HomePage.resources
+D:\C#Form\companyPizza\PizzaCompany\PizzaCompany\obj\Debug\PizzaCompany.FormSidbarController.OrderPage.resources
+D:\C#Form\companyPizza\PizzaCompany\PizzaCompany\obj\Debug\PizzaCompany.DicountPage.Discount.resources

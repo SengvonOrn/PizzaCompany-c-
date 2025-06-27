@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 
 using System.Windows.Forms;
 
@@ -12,6 +11,8 @@ namespace PizzaCompany.Helper
         public TimeClock()
         {
             InitializeComponent();
+
+
             rtc = new RealTimeClock();
             rtc.AttachClock(dateTime);
             dates.Text = DateTime.Now.ToString();

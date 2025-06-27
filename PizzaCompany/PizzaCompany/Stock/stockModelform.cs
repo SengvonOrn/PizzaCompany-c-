@@ -39,12 +39,14 @@ namespace PizzaCompany.Stock
             {
                 if (IntStocks == 0)
                 {
-                    getTotalPrice = Convert.ToDecimal(Stoks.Text);
+                
+                    getTotalPrice = Convert.ToDecimal(price.Text) * Convert.ToDecimal(Stoks.Text);
                 }
                 else
                 {
                     getTotalPrice = Convert.ToDecimal(price.Text) * Convert.ToDecimal(IntStocks);
                 }
+
                 getOutStocks = Convert.ToDecimal(Stoks.Text) - IntStocks;
                 Hashtable ht = new Hashtable();
 
@@ -59,6 +61,7 @@ namespace PizzaCompany.Stock
 
                 ht.Add("@OutStock", getOutStocks);
                 ht.Add("@TotalStock", Stoks.Text);
+
                 ht.Add("@TotalPrice", getTotalPrice);
 
 

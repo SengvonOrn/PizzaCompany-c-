@@ -194,17 +194,22 @@ namespace PizzaCompany.FormSidbarController
                 condition += " AND MONTH(o.CreatedAt) = MONTH(GETDATE()) AND YEAR(o.CreatedAt) = YEAR(GETDATE())";
             }
 
-            //===get all for sale and chart=======>
+            //===get all for sale and SubTotal chart=======>
 
 
-            string totalAmountSql = $@"SELECT ISNULL(SUM(Subtotal), 0) FROM OrderTable o JOIN Custmer c ON o.cId = c.cId WHERE o.payment = 'Success' AND o.Action = 'good' {condition.Replace("WHERE", "AND")}";
-            double totalAmount = Convert.ToDouble(MainClass.GetScalarValue(totalAmountSql));
+            string subTotalAmountSql = $@"SELECT ISNULL(SUM(Subtotal), 0) FROM OrderTable o JOIN Custmer c ON o.cId = c.cId WHERE (o.payment = 'Success' OR o.Action = 'good')AND o.payment != 'Pending' {condition.Replace("WHERE", "AND")}";
+            decimal subtotalAmount = Convert.ToDecimal(MainClass.GetScalarValue(subTotalAmountSql));
 
-            decimal taxRate = 0.10m;
-            decimal taxAmount = (decimal)totalAmount * taxRate;
-            this.finalRevenue = (decimal)totalAmount - taxAmount;
 
-            ValuesSet.Text = $"Sale: ${totalAmount:F}";
+            //== Get all for sale Total and chart ========>
+
+
+            string TotalAmountSql = $@"SELECT ISNULL(SUM(Total), 0) FROM OrderTable o JOIN Custmer c ON o.cId = c.cId WHERE (o.payment = 'Success' OR o.Action = 'good')AND o.payment != 'Pending' {condition.Replace("WHERE", "AND")}";
+            finalRevenue = Convert.ToDecimal(MainClass.GetScalarValue(TotalAmountSql));
+
+            decimal getTotalAmountExpent = subtotalAmount - finalRevenue;
+
+            ValuesSet.Text = $"Sale: ${subtotalAmount:F}";
             netsale.Text = $"Net sale: ${finalRevenue:F}";
 
 
@@ -212,22 +217,13 @@ namespace PizzaCompany.FormSidbarController
 
             //=======Purchase===================>
 
-            string countSql = $@"SELECT COUNT(*) FROM OrderTable o JOIN Custmer c ON o.cId = c.cId  WHERE o.Action = 'good' AND o.payment = 'Success';";
+            string countSql = $@"SELECT COUNT(*) FROM OrderTable o JOIN Custmer c ON o.cId = c.cId  WHERE (o.Action = 'good' OR o.payment = 'Success')AND o.payment != 'Pending' {condition.Replace("WHERE", "AND")}";
             decimal purchasesum = MainClass.GetOrderCount(countSql);
             purchaseSummary.Text = $"Count: {purchasesum} -";
 
 
-            string totalAmountSqlAll = $@"SELECT ISNULL(SUM(Subtotal), 0) FROM OrderTable o JOIN Custmer c ON o.cId = c.cId  WHERE o.payment = 'Success' AND o.Action = 'good'";
-            decimal totalAmountAll = Convert.ToDecimal(MainClass.GetScalarValue(totalAmountSqlAll));
-
-
-
-            decimal taxAmountAll = totalAmountAll * taxRate;
-            decimal finalRevenueAll = totalAmountAll - taxAmountAll;
-
-
-            getTotalpurchas.Text = $"${finalRevenueAll:F}";
-            decimal netSalePercentage = totalAmountAll > 0 ? (purchasesum / finalRevenueAll) * 100 : 0;
+            getTotalpurchas.Text = $"${finalRevenue:F}";
+            decimal netSalePercentage = finalRevenue > 0 ? (purchasesum /  finalRevenue) * 100 : 0;
             purchasePersontage.Text = $"Average: {netSalePercentage:F}%";
 
 
@@ -235,30 +231,18 @@ namespace PizzaCompany.FormSidbarController
 
 
 
-            string countbad = $@"SELECT COUNT(*) FROM OrderTable o JOIN Custmer c ON o.cId = c.cId WHERE o.Action = 'bad' AND o.payment != 'Pending'";
-            decimal getCountbad = Convert.ToDecimal(MainClass.GetScalarValue(countbad));
+            string countExpand = $@"SELECT COUNT(*) FROM OrderTable o JOIN Custmer c ON o.cId = c.cId WHERE (o.Action = 'bad' OR o.payment = 'Pending')AND o.payment != 'Success' {condition.Replace("WHERE", "AND")}";
+            decimal getcountExpand = Convert.ToDecimal(MainClass.GetScalarValue(countExpand));
+      
+             string Expens = $@"SELECT ISNULL(SUM(Subtotal), 0) FROM OrderTable o JOIN Custmer c ON o.cId = c.cId WHERE (o.Action = 'bad' OR o.payment = 'Pending')AND o.payment != 'Success' {condition.Replace("WHERE", "AND")}";
+             decimal getExpenExpand = Convert.ToDecimal(MainClass.GetScalarValue(Expens));
 
-            string countunpaid = $@"SELECT COUNT(*) FROM OrderTable o JOIN Custmer c ON o.cId = c.cId WHERE o.payment = 'Pending' AND o.Action != 'bad'";
-            decimal getcountunpaid = Convert.ToDecimal(MainClass.GetScalarValue(countunpaid));
+             decimal getExpens = getExpenExpand + getTotalAmountExpent;
 
-            decimal getall = getCountbad + getcountunpaid;
+            label16.Text = $"${getExpenExpand:F}";
 
+            decimal averageExpens = getExpens > 0 ? (getcountExpand / getExpens)  * 100 : 0;
 
-
-            string ExpensBad = $@"SELECT ISNULL(SUM(Subtotal), 0) FROM OrderTable o JOIN Custmer c ON o.cId = c.cId WHERE o.Action = 'bad' AND o.payment != 'Pending'";
-            decimal getExpensBad = Convert.ToDecimal(MainClass.GetScalarValue(ExpensBad));
-
-            string ExpensUnpaind = $@"SELECT ISNULL(SUM(Subtotal), 0) FROM OrderTable o JOIN Custmer c ON o.cId = c.cId WHERE o.payment = 'Pending' AND o.Action != 'bad'";
-            decimal getExpensUnpaind = Convert.ToDecimal(MainClass.GetScalarValue(ExpensUnpaind));
-
-
-            decimal getExpens = getExpensBad + getExpensUnpaind + taxAmountAll;
-
-            label16.Text = $"${getExpens:F}";
-
-            decimal averageExpens = getExpens > 0 ? (getall / getExpens)  * 100 : 0;
-
-         
             Average_expsum.Text = $"Average: {averageExpens:F}%";
 
 
@@ -267,21 +251,25 @@ namespace PizzaCompany.FormSidbarController
 
 
 
-            getnetsale.Text = $"${finalRevenueAll:F}";
-            dicount.Text = $"${taxAmountAll:F}";
-            decimal getAverage_s_d = taxAmount > 0 ? (purchasesum / taxAmountAll) * 100 : 0 ;
+            getnetsale.Text =  $"${subtotalAmount:F}";
+            dicount.Text = $"${getTotalAmountExpent:F}";
+
+            decimal getAverage_s_d = getTotalAmountExpent > 0 ? (purchasesum / getTotalAmountExpent) * 100 : 0 ;
             sale_disc_avr.Text = $"Average: {getAverage_s_d:F}%";
+
+
+
 
             //========Dues and Pending==================>
 
 
-            string dues  = $@"SELECT COUNT(*) FROM OrderTable o JOIN Custmer c ON o.cId = c.cId WHERE o.payment = 'Pending'";
+            string dues  = $@"SELECT COUNT(*) FROM OrderTable o JOIN Custmer c ON o.cId = c.cId WHERE o.payment = 'Pending' {condition.Replace("WHERE", "AND")}";
             decimal getdues = Convert.ToDecimal(MainClass.GetScalarValue(dues));
             setDues.Text = $"Total: {getdues}";
 
 
 
-            string pending = $@"SELECT ISNULL(SUM(Subtotal), 0) FROM OrderTable o JOIN Custmer c ON o.cId = c.cId WHERE o.payment = 'Pending'";
+            string pending = $@"SELECT ISNULL(SUM(Subtotal), 0) FROM OrderTable o JOIN Custmer c ON o.cId = c.cId WHERE o.payment = 'Pending' {condition.Replace("WHERE", "AND")}";
             decimal getPending = Convert.ToDecimal(MainClass.GetScalarValue(pending));
             pendingSummary.Text = $"${getPending:F}";
 
@@ -296,19 +284,16 @@ namespace PizzaCompany.FormSidbarController
 
 
 
-            string Customer = $@"SELECT COUNT(*) FROM Custmer";
+            string Customer = $@"SELECT COUNT(*) FROM Custmer c JOIN OrderTable o ON c.cId = o.cId {condition.Replace("WHERE", "AND")}";
             decimal getCustomer = Convert.ToDecimal(MainClass.GetScalarValue(Customer));
             customer.Text = $"Total: {getCustomer}";
-            custExpens.Text = $"${finalRevenueAll:F}";
-
+            custExpens.Text = $"${finalRevenue:F}";
             decimal getAvr = finalRevenue > 0 ? getCustomer / finalRevenue : 0 ;
             cusAvr.Text = $"Average: {getAvr:F}%";
 
 
            
         }
-
-
         //=============== laoding to chart=============>
 
         private void LoadDataFromDatabase()
@@ -326,6 +311,7 @@ namespace PizzaCompany.FormSidbarController
             {
                 condition += " AND o.CreatedAt >= DATEADD(DAY, 1 - DATEPART(WEEKDAY, GETDATE()), CAST(GETDATE() AS DATE))";
                 condition += " AND o.CreatedAt < DATEADD(DAY, 8 - DATEPART(WEEKDAY, GETDATE()), CAST(GETDATE() AS DATE))";
+           
             }
             else if (_selectFileType == "Monthly")
             {
@@ -335,7 +321,8 @@ namespace PizzaCompany.FormSidbarController
             string sql = $@"
                             SELECT o.CreatedAt, o.Subtotal
                             FROM OrderTable o
-                            WHERE o.payment = 'Success' AND o.Action = 'good' AND {condition}";
+                            JOIN Custmer c ON o.cId = c.cId
+                            WHERE (o.payment = 'Success' OR o.Action = 'good')AND o.payment != 'Pending' AND {condition}";
 
             DataTable dt = MainClass.GetDataTableforchart(sql);
             foreach (DataRow row in dt.Rows)
@@ -343,7 +330,7 @@ namespace PizzaCompany.FormSidbarController
                 allData.Add(new DataPointModel
                 {
                     Date = Convert.ToDateTime(row["CreatedAt"]),
-                    Value = Convert.ToInt32(row["Subtotal"])
+                    Value = Convert.ToDecimal(row["Subtotal"])
                 });
             }
         }
@@ -357,7 +344,7 @@ namespace PizzaCompany.FormSidbarController
             getData(_selectFileType);         
             LoadDataFromDatabase();          
 
-            Dictionary<string, int> groupedData = null;
+            Dictionary<string, decimal> groupedData = null;
 
             if (_selectFileType == "Daily")
             {
@@ -367,16 +354,17 @@ namespace PizzaCompany.FormSidbarController
             }
             else if (_selectFileType == "Weekly")
             {
+               
                 groupedData = allData
-                    .GroupBy(d =>
-                        CultureInfo.CurrentCulture.Calendar.GetWeekOfYear(d.Date, CalendarWeekRule.FirstDay, DayOfWeek.Monday))
-                    .ToDictionary(g => $"Week {g.Key}", g => g.Sum(x => x.Value));
+                 .GroupBy(d => d.Date.Date)
+                 .ToDictionary(g => g.Key.ToShortDateString(), g => g.Sum(x => x.Value));
             }
             else if (_selectFileType == "Monthly")
             {
+               
                 groupedData = allData
-                    .GroupBy(d => new { d.Date.Year, d.Date.Month })
-                    .ToDictionary(g => $"{g.Key.Year}-{g.Key.Month:00}", g => g.Sum(x => x.Value));
+                 .GroupBy(d => d.Date.Date)
+                 .ToDictionary(g => g.Key.ToShortDateString(), g => g.Sum(x => x.Value));
             }
 
             DisplayChart(groupedData);
@@ -384,14 +372,14 @@ namespace PizzaCompany.FormSidbarController
 
 
 
-        private void DisplayChart(Dictionary<string, int> groupedData)
+        private void DisplayChart(Dictionary<string, decimal> groupedData)
         {
             chart1.Series.Clear();
 
             Series orderSeries = new Series("Analysis")
             {
                 ChartType = SeriesChartType.Column,
-                Color = Color.DodgerBlue,
+                Color = Color.Blue,
                 IsValueShownAsLabel = true
             };
 
@@ -411,7 +399,7 @@ namespace PizzaCompany.FormSidbarController
             Series revenueSeries = new Series("Final Revenue")
             {
                 ChartType = SeriesChartType.Column,
-                Color = Color.ForestGreen,
+                Color = Color.Green,
                 IsValueShownAsLabel = true
             };
 
@@ -420,6 +408,8 @@ namespace PizzaCompany.FormSidbarController
            chart1.Series.Add(revenueSeries);
            chart1.ChartAreas[0].RecalculateAxesScale();
         }
+
+
         //==========================================================================>
         private void cmdanalysist_SelectedIndexChanged(object sender, EventArgs e)
         {

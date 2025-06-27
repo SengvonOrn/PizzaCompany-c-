@@ -34,6 +34,7 @@
             // 
             // searchMenu
             // 
+            this.searchMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.searchMenu.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.searchMenu.DefaultText = "";
             this.searchMenu.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -45,29 +46,30 @@
             this.searchMenu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.searchMenu.IconLeft = global::PizzaCompany.Properties.Resources.search;
             this.searchMenu.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.searchMenu.Location = new System.Drawing.Point(722, 13);
+            this.searchMenu.Location = new System.Drawing.Point(844, 13);
             this.searchMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.searchMenu.Name = "searchMenu";
             this.searchMenu.PlaceholderText = "";
             this.searchMenu.SelectedText = "";
-            this.searchMenu.Size = new System.Drawing.Size(384, 56);
+            this.searchMenu.Size = new System.Drawing.Size(394, 56);
             this.searchMenu.TabIndex = 7;
             this.searchMenu.TextChanged += new System.EventHandler(this.searchMenu_TextChanged);
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(2, 82);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1115, 638);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1322, 741);
             this.flowLayoutPanel1.TabIndex = 8;
             // 
             // MainBishForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1118, 723);
+            this.ClientSize = new System.Drawing.Size(1263, 823);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.searchMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

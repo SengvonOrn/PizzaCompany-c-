@@ -1,6 +1,6 @@
 ﻿namespace PizzaCompany.FormSidbarController
 {
-    partial class Dashboard
+    partial class OrderPage
     {
         /// <summary>
         /// Required designer variable.
@@ -48,20 +48,39 @@
             this.btnpayLater = new Guna.UI2.WinForms.Guna2Button();
             this.btnCredit = new Guna.UI2.WinForms.Guna2Button();
             this.btnCash = new Guna.UI2.WinForms.Guna2Button();
+            this.Invoice = new System.Windows.Forms.Label();
             this.btnplaceorder = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.Total = new System.Windows.Forms.Label();
-            this.Tax = new System.Windows.Forms.Label();
+            this.DiscountTol = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.Subtotal = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.Invoice = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.closebtn = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDiscount = new Guna.UI2.WinForms.Guna2Button();
+            this.btnRefresh = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnMinimize = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.btnMaximizeBox = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbldate = new System.Windows.Forms.Label();
+            this.guna2Separator2 = new Guna.UI2.WinForms.Guna2Separator();
+            this.lbldatetime = new System.Windows.Forms.Label();
+            this.lblweekday = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
+            this.guna2Panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -80,13 +99,14 @@
             this.guna2Panel1.Controls.Add(this.btnBitePizza);
             this.guna2Panel1.Controls.Add(this.btnBuffPizza);
             this.guna2Panel1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Panel1.Location = new System.Drawing.Point(12, 12);
+            this.guna2Panel1.Location = new System.Drawing.Point(3, 3);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1135, 215);
+            this.guna2Panel1.Size = new System.Drawing.Size(1522, 243);
             this.guna2Panel1.TabIndex = 0;
             // 
             // btnBeverages
             // 
+            this.btnBeverages.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBeverages.Animated = true;
             this.btnBeverages.BackColor = System.Drawing.Color.Transparent;
             this.btnBeverages.BorderColor = System.Drawing.Color.Transparent;
@@ -105,9 +125,9 @@
             this.btnBeverages.FillColor = System.Drawing.Color.White;
             this.btnBeverages.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBeverages.ForeColor = System.Drawing.Color.Black;
-            this.btnBeverages.Location = new System.Drawing.Point(916, 119);
+            this.btnBeverages.Location = new System.Drawing.Point(1232, 132);
             this.btnBeverages.Name = "btnBeverages";
-            this.btnBeverages.Size = new System.Drawing.Size(205, 93);
+            this.btnBeverages.Size = new System.Drawing.Size(287, 108);
             this.btnBeverages.TabIndex = 0;
             this.btnBeverages.Text = "BEVERAGES";
             this.btnBeverages.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
@@ -116,6 +136,7 @@
             // 
             // btnCheckenForm
             // 
+            this.btnCheckenForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCheckenForm.Animated = true;
             this.btnCheckenForm.BackColor = System.Drawing.Color.Transparent;
             this.btnCheckenForm.BorderColor = System.Drawing.Color.Transparent;
@@ -134,11 +155,11 @@
             this.btnCheckenForm.FillColor = System.Drawing.Color.White;
             this.btnCheckenForm.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheckenForm.ForeColor = System.Drawing.Color.Black;
-            this.btnCheckenForm.Location = new System.Drawing.Point(916, 3);
+            this.btnCheckenForm.Location = new System.Drawing.Point(1232, 3);
             this.btnCheckenForm.Name = "btnCheckenForm";
-            this.btnCheckenForm.Size = new System.Drawing.Size(205, 93);
+            this.btnCheckenForm.Size = new System.Drawing.Size(287, 108);
             this.btnCheckenForm.TabIndex = 0;
-            this.btnCheckenForm.Text = "CHECKEN";
+            this.btnCheckenForm.Text = "CHICKEN";
             this.btnCheckenForm.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
             this.btnCheckenForm.UseTransparentBackground = true;
             this.btnCheckenForm.Click += new System.EventHandler(this.btnCheckenForm_Click);
@@ -163,9 +184,9 @@
             this.btnDesserts.FillColor = System.Drawing.Color.White;
             this.btnDesserts.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDesserts.ForeColor = System.Drawing.Color.Black;
-            this.btnDesserts.Location = new System.Drawing.Point(687, 119);
+            this.btnDesserts.Location = new System.Drawing.Point(922, 132);
             this.btnDesserts.Name = "btnDesserts";
-            this.btnDesserts.Size = new System.Drawing.Size(205, 93);
+            this.btnDesserts.Size = new System.Drawing.Size(287, 108);
             this.btnDesserts.TabIndex = 0;
             this.btnDesserts.Text = "DESSERTS";
             this.btnDesserts.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
@@ -192,9 +213,9 @@
             this.btnMainBish.FillColor = System.Drawing.Color.White;
             this.btnMainBish.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMainBish.ForeColor = System.Drawing.Color.Black;
-            this.btnMainBish.Location = new System.Drawing.Point(687, 3);
+            this.btnMainBish.Location = new System.Drawing.Point(922, 3);
             this.btnMainBish.Name = "btnMainBish";
-            this.btnMainBish.Size = new System.Drawing.Size(205, 93);
+            this.btnMainBish.Size = new System.Drawing.Size(287, 108);
             this.btnMainBish.TabIndex = 0;
             this.btnMainBish.Text = "MAIN BISH";
             this.btnMainBish.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
@@ -221,9 +242,9 @@
             this.btnSalad.FillColor = System.Drawing.Color.White;
             this.btnSalad.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalad.ForeColor = System.Drawing.Color.Black;
-            this.btnSalad.Location = new System.Drawing.Point(3, 119);
+            this.btnSalad.Location = new System.Drawing.Point(3, 132);
             this.btnSalad.Name = "btnSalad";
-            this.btnSalad.Size = new System.Drawing.Size(204, 93);
+            this.btnSalad.Size = new System.Drawing.Size(285, 108);
             this.btnSalad.TabIndex = 0;
             this.btnSalad.Text = "SALAD";
             this.btnSalad.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
@@ -250,9 +271,9 @@
             this.btnAppetizer.FillColor = System.Drawing.Color.White;
             this.btnAppetizer.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAppetizer.ForeColor = System.Drawing.Color.Black;
-            this.btnAppetizer.Location = new System.Drawing.Point(458, 119);
+            this.btnAppetizer.Location = new System.Drawing.Point(614, 132);
             this.btnAppetizer.Name = "btnAppetizer";
-            this.btnAppetizer.Size = new System.Drawing.Size(204, 93);
+            this.btnAppetizer.Size = new System.Drawing.Size(286, 108);
             this.btnAppetizer.TabIndex = 0;
             this.btnAppetizer.Text = "APPETIZER";
             this.btnAppetizer.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
@@ -281,7 +302,7 @@
             this.btnPizza.ForeColor = System.Drawing.Color.Black;
             this.btnPizza.Location = new System.Drawing.Point(3, 3);
             this.btnPizza.Name = "btnPizza";
-            this.btnPizza.Size = new System.Drawing.Size(204, 93);
+            this.btnPizza.Size = new System.Drawing.Size(285, 108);
             this.btnPizza.TabIndex = 0;
             this.btnPizza.Text = "Pizza";
             this.btnPizza.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
@@ -308,9 +329,9 @@
             this.btnKitMenu.FillColor = System.Drawing.Color.White;
             this.btnKitMenu.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKitMenu.ForeColor = System.Drawing.Color.Black;
-            this.btnKitMenu.Location = new System.Drawing.Point(231, 119);
+            this.btnKitMenu.Location = new System.Drawing.Point(309, 132);
             this.btnKitMenu.Name = "btnKitMenu";
-            this.btnKitMenu.Size = new System.Drawing.Size(204, 93);
+            this.btnKitMenu.Size = new System.Drawing.Size(284, 108);
             this.btnKitMenu.TabIndex = 0;
             this.btnKitMenu.Text = "KIT\'E MENU";
             this.btnKitMenu.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
@@ -337,9 +358,9 @@
             this.btnBitePizza.FillColor = System.Drawing.Color.White;
             this.btnBitePizza.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBitePizza.ForeColor = System.Drawing.Color.Black;
-            this.btnBitePizza.Location = new System.Drawing.Point(458, 3);
+            this.btnBitePizza.Location = new System.Drawing.Point(614, 3);
             this.btnBitePizza.Name = "btnBitePizza";
-            this.btnBitePizza.Size = new System.Drawing.Size(204, 93);
+            this.btnBitePizza.Size = new System.Drawing.Size(286, 108);
             this.btnBitePizza.TabIndex = 0;
             this.btnBitePizza.Text = "BITE PIZZA";
             this.btnBitePizza.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
@@ -366,9 +387,9 @@
             this.btnBuffPizza.FillColor = System.Drawing.Color.White;
             this.btnBuffPizza.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuffPizza.ForeColor = System.Drawing.Color.Black;
-            this.btnBuffPizza.Location = new System.Drawing.Point(231, 3);
+            this.btnBuffPizza.Location = new System.Drawing.Point(309, 3);
             this.btnBuffPizza.Name = "btnBuffPizza";
-            this.btnBuffPizza.Size = new System.Drawing.Size(204, 93);
+            this.btnBuffPizza.Size = new System.Drawing.Size(284, 108);
             this.btnBuffPizza.TabIndex = 0;
             this.btnBuffPizza.Text = "BUFF PIZZA";
             this.btnBuffPizza.TextTransform = Guna.UI2.WinForms.Enums.TextTransform.UpperCase;
@@ -377,37 +398,38 @@
             // 
             // PanelMenuContainner
             // 
+            this.PanelMenuContainner.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.PanelMenuContainner.BackColor = System.Drawing.Color.DarkGray;
             this.PanelMenuContainner.BorderRadius = 3;
-            this.PanelMenuContainner.Location = new System.Drawing.Point(15, 233);
+            this.PanelMenuContainner.Location = new System.Drawing.Point(12, 322);
             this.PanelMenuContainner.Name = "PanelMenuContainner";
-            this.PanelMenuContainner.Size = new System.Drawing.Size(1118, 723);
+            this.PanelMenuContainner.Size = new System.Drawing.Size(1238, 743);
             this.PanelMenuContainner.TabIndex = 0;
             // 
             // guna2Panel4
             // 
-            this.guna2Panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.guna2Panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel4.BackColor = System.Drawing.Color.White;
             this.guna2Panel4.Controls.Add(this.btnDinin);
             this.guna2Panel4.Controls.Add(this.btnCarryout);
             this.guna2Panel4.Controls.Add(this.btnDelivery);
             this.guna2Panel4.Controls.Add(this.guna2Panel6);
+            this.guna2Panel4.Controls.Add(this.Invoice);
             this.guna2Panel4.Controls.Add(this.btnplaceorder);
             this.guna2Panel4.Controls.Add(this.guna2Separator1);
             this.guna2Panel4.Controls.Add(this.Total);
-            this.guna2Panel4.Controls.Add(this.Tax);
+            this.guna2Panel4.Controls.Add(this.DiscountTol);
             this.guna2Panel4.Controls.Add(this.label10);
             this.guna2Panel4.Controls.Add(this.label7);
             this.guna2Panel4.Controls.Add(this.Subtotal);
             this.guna2Panel4.Controls.Add(this.label6);
             this.guna2Panel4.Controls.Add(this.label5);
-            this.guna2Panel4.Controls.Add(this.Invoice);
             this.guna2Panel4.Controls.Add(this.flowLayoutPanel1);
-            this.guna2Panel4.Location = new System.Drawing.Point(1145, 12);
+            this.guna2Panel4.Location = new System.Drawing.Point(1256, 75);
             this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(381, 944);
+            this.guna2Panel4.Size = new System.Drawing.Size(487, 980);
             this.guna2Panel4.TabIndex = 0;
             // 
             // btnDinin
@@ -424,7 +446,7 @@
             this.btnDinin.FillColor = System.Drawing.Color.White;
             this.btnDinin.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDinin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnDinin.Location = new System.Drawing.Point(13, 610);
+            this.btnDinin.Location = new System.Drawing.Point(12, 741);
             this.btnDinin.Name = "btnDinin";
             this.btnDinin.Size = new System.Drawing.Size(139, 54);
             this.btnDinin.TabIndex = 3;
@@ -446,9 +468,9 @@
             this.btnCarryout.FillColor = System.Drawing.Color.White;
             this.btnCarryout.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCarryout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnCarryout.Location = new System.Drawing.Point(238, 610);
+            this.btnCarryout.Location = new System.Drawing.Point(343, 741);
             this.btnCarryout.Name = "btnCarryout";
-            this.btnCarryout.Size = new System.Drawing.Size(123, 54);
+            this.btnCarryout.Size = new System.Drawing.Size(128, 54);
             this.btnCarryout.TabIndex = 3;
             this.btnCarryout.Text = "Carry Out";
             this.btnCarryout.Click += new System.EventHandler(this.btnCarryout_Click);
@@ -468,7 +490,7 @@
             this.btnDelivery.FillColor = System.Drawing.Color.White;
             this.btnDelivery.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDelivery.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnDelivery.Location = new System.Drawing.Point(137, 610);
+            this.btnDelivery.Location = new System.Drawing.Point(189, 741);
             this.btnDelivery.Name = "btnDelivery";
             this.btnDelivery.Size = new System.Drawing.Size(116, 54);
             this.btnDelivery.TabIndex = 3;
@@ -487,11 +509,11 @@
             this.guna2Panel6.Controls.Add(this.btnCredit);
             this.guna2Panel6.Controls.Add(this.btnCash);
             this.guna2Panel6.FillColor = System.Drawing.Color.White;
-            this.guna2Panel6.Location = new System.Drawing.Point(13, 682);
+            this.guna2Panel6.Location = new System.Drawing.Point(12, 813);
             this.guna2Panel6.Name = "guna2Panel6";
             this.guna2Panel6.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.guna2Panel6.ShadowDecoration.Enabled = true;
-            this.guna2Panel6.Size = new System.Drawing.Size(357, 84);
+            this.guna2Panel6.Size = new System.Drawing.Size(463, 84);
             this.guna2Panel6.TabIndex = 4;
             this.guna2Panel6.UseTransparentBackground = true;
             // 
@@ -510,7 +532,7 @@
             this.btnpayLater.FillColor = System.Drawing.Color.White;
             this.btnpayLater.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnpayLater.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnpayLater.Location = new System.Drawing.Point(225, 16);
+            this.btnpayLater.Location = new System.Drawing.Point(331, 16);
             this.btnpayLater.Name = "btnpayLater";
             this.btnpayLater.Size = new System.Drawing.Size(123, 54);
             this.btnpayLater.TabIndex = 3;
@@ -553,12 +575,23 @@
             this.btnCash.FillColor = System.Drawing.Color.White;
             this.btnCash.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCash.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnCash.Location = new System.Drawing.Point(124, 16);
+            this.btnCash.Location = new System.Drawing.Point(177, 16);
             this.btnCash.Name = "btnCash";
             this.btnCash.Size = new System.Drawing.Size(116, 54);
             this.btnCash.TabIndex = 3;
             this.btnCash.Text = "Chash";
             this.btnCash.Click += new System.EventHandler(this.btnCash_Click);
+            // 
+            // Invoice
+            // 
+            this.Invoice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Invoice.AutoSize = true;
+            this.Invoice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Invoice.Location = new System.Drawing.Point(6, 4);
+            this.Invoice.Name = "Invoice";
+            this.Invoice.Size = new System.Drawing.Size(74, 28);
+            this.Invoice.TabIndex = 1;
+            this.Invoice.Text = "Invoice";
             // 
             // btnplaceorder
             // 
@@ -576,9 +609,9 @@
             this.btnplaceorder.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(31)))), ((int)(((byte)(242)))));
             this.btnplaceorder.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnplaceorder.ForeColor = System.Drawing.Color.White;
-            this.btnplaceorder.Location = new System.Drawing.Point(13, 787);
+            this.btnplaceorder.Location = new System.Drawing.Point(13, 902);
             this.btnplaceorder.Name = "btnplaceorder";
-            this.btnplaceorder.Size = new System.Drawing.Size(357, 67);
+            this.btnplaceorder.Size = new System.Drawing.Size(463, 67);
             this.btnplaceorder.TabIndex = 3;
             this.btnplaceorder.Text = "Place An Order";
             this.btnplaceorder.UseTransparentBackground = true;
@@ -589,9 +622,9 @@
             this.guna2Separator1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Separator1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2Separator1.Location = new System.Drawing.Point(22, 540);
+            this.guna2Separator1.Location = new System.Drawing.Point(21, 605);
             this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(343, 11);
+            this.guna2Separator1.Size = new System.Drawing.Size(449, 11);
             this.guna2Separator1.TabIndex = 2;
             // 
             // Total
@@ -599,28 +632,28 @@
             this.Total.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Total.AutoSize = true;
             this.Total.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Total.Location = new System.Drawing.Point(306, 554);
+            this.Total.Location = new System.Drawing.Point(394, 619);
             this.Total.Name = "Total";
             this.Total.Size = new System.Drawing.Size(59, 23);
             this.Total.TabIndex = 1;
             this.Total.Text = "$11.35";
             // 
-            // Tax
+            // DiscountTol
             // 
-            this.Tax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Tax.AutoSize = true;
-            this.Tax.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tax.Location = new System.Drawing.Point(302, 501);
-            this.Tax.Name = "Tax";
-            this.Tax.Size = new System.Drawing.Size(50, 23);
-            this.Tax.TabIndex = 1;
-            this.Tax.Text = "$0.55";
+            this.DiscountTol.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DiscountTol.AutoSize = true;
+            this.DiscountTol.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DiscountTol.Location = new System.Drawing.Point(394, 566);
+            this.DiscountTol.Name = "DiscountTol";
+            this.DiscountTol.Size = new System.Drawing.Size(50, 23);
+            this.DiscountTol.TabIndex = 1;
+            this.DiscountTol.Text = "$0.55";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(20, 564);
+            this.label10.Location = new System.Drawing.Point(19, 629);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(46, 23);
             this.label10.TabIndex = 1;
@@ -630,18 +663,18 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(20, 501);
+            this.label7.Location = new System.Drawing.Point(19, 566);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 23);
+            this.label7.Size = new System.Drawing.Size(77, 23);
             this.label7.TabIndex = 1;
-            this.label7.Text = "Vat";
+            this.label7.Text = "Discount";
             // 
             // Subtotal
             // 
             this.Subtotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Subtotal.AutoSize = true;
             this.Subtotal.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Subtotal.Location = new System.Drawing.Point(302, 456);
+            this.Subtotal.Location = new System.Drawing.Point(394, 521);
             this.Subtotal.Name = "Subtotal";
             this.Subtotal.Size = new System.Drawing.Size(59, 23);
             this.Subtotal.TabIndex = 1;
@@ -651,7 +684,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(20, 456);
+            this.label6.Location = new System.Drawing.Point(19, 521);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(81, 23);
             this.label6.TabIndex = 1;
@@ -661,49 +694,273 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(17, 407);
+            this.label5.Location = new System.Drawing.Point(16, 472);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(172, 28);
             this.label5.TabIndex = 1;
             this.label5.Text = "Payment summary";
-            // 
-            // Invoice
-            // 
-            this.Invoice.AutoSize = true;
-            this.Invoice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Invoice.Location = new System.Drawing.Point(8, 6);
-            this.Invoice.Name = "Invoice";
-            this.Invoice.Size = new System.Drawing.Size(74, 28);
-            this.Invoice.TabIndex = 1;
-            this.Invoice.Text = "Invoice";
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(5, 44);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(5, 40);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(371, 338);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(477, 416);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // Dashboard
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel2.AutoScroll = true;
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel2.Controls.Add(this.guna2Panel1);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(12, 70);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(1238, 255);
+            this.flowLayoutPanel2.TabIndex = 1;
+            // 
+            // closebtn
+            // 
+            this.closebtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.closebtn.BorderColor = System.Drawing.Color.Transparent;
+            this.closebtn.BorderRadius = 1;
+            this.closebtn.BorderThickness = 1;
+            this.closebtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.closebtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.closebtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.closebtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.closebtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.closebtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.closebtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closebtn.ForeColor = System.Drawing.Color.White;
+            this.closebtn.Location = new System.Drawing.Point(1588, 5);
+            this.closebtn.Name = "closebtn";
+            this.closebtn.Size = new System.Drawing.Size(155, 64);
+            this.closebtn.TabIndex = 2;
+            this.closebtn.Text = "Exit Order X";
+            this.closebtn.Click += new System.EventHandler(this.closebtn_Click);
+            // 
+            // btnDiscount
+            // 
+            this.btnDiscount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDiscount.BorderColor = System.Drawing.Color.Transparent;
+            this.btnDiscount.BorderRadius = 1;
+            this.btnDiscount.BorderThickness = 1;
+            this.btnDiscount.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDiscount.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDiscount.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDiscount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDiscount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDiscount.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(31)))), ((int)(((byte)(242)))));
+            this.btnDiscount.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDiscount.ForeColor = System.Drawing.Color.White;
+            this.btnDiscount.Location = new System.Drawing.Point(1422, 6);
+            this.btnDiscount.Name = "btnDiscount";
+            this.btnDiscount.Size = new System.Drawing.Size(155, 64);
+            this.btnDiscount.TabIndex = 3;
+            this.btnDiscount.Text = "Discount";
+            this.btnDiscount.Click += new System.EventHandler(this.btnDiscount_Click);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefresh.BorderColor = System.Drawing.Color.Transparent;
+            this.btnRefresh.BorderRadius = 1;
+            this.btnRefresh.BorderThickness = 1;
+            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefresh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefresh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnRefresh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnRefresh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnRefresh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(31)))), ((int)(((byte)(242)))));
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.Location = new System.Drawing.Point(1256, 6);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(155, 64);
+            this.btnRefresh.TabIndex = 4;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel2.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2Panel2.BorderRadius = 3;
+            this.guna2Panel2.BorderThickness = 1;
+            this.guna2Panel2.Controls.Add(this.guna2PictureBox1);
+            this.guna2Panel2.Controls.Add(this.btnMinimize);
+            this.guna2Panel2.Controls.Add(this.btnMaximizeBox);
+            this.guna2Panel2.Controls.Add(this.label2);
+            this.guna2Panel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(31)))), ((int)(((byte)(242)))));
+            this.guna2Panel2.Location = new System.Drawing.Point(252, 4);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.guna2Panel2.ShadowDecoration.Enabled = true;
+            this.guna2Panel2.Size = new System.Drawing.Size(745, 63);
+            this.guna2Panel2.TabIndex = 0;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = global::PizzaCompany.Properties.Resources.messageBox;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(16, 17);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(31, 25);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 0;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
+            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimize.CustomClick = true;
+            this.btnMinimize.FillColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMinimize.IconColor = System.Drawing.Color.White;
+            this.btnMinimize.Location = new System.Drawing.Point(606, 11);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(62, 41);
+            this.btnMinimize.TabIndex = 6;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // btnMaximizeBox
+            // 
+            this.btnMaximizeBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximizeBox.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
+            this.btnMaximizeBox.CustomClick = true;
+            this.btnMaximizeBox.FillColor = System.Drawing.Color.Transparent;
+            this.btnMaximizeBox.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaximizeBox.IconColor = System.Drawing.Color.White;
+            this.btnMaximizeBox.Location = new System.Drawing.Point(674, 11);
+            this.btnMaximizeBox.Name = "btnMaximizeBox";
+            this.btnMaximizeBox.Size = new System.Drawing.Size(62, 41);
+            this.btnMaximizeBox.TabIndex = 6;
+            this.btnMaximizeBox.Click += new System.EventHandler(this.btnMaximizeBox_Click);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(153, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(383, 31);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Thank For choosing Pizza Company";
+            // 
+            // lbldate
+            // 
+            this.lbldate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbldate.AutoSize = true;
+            this.lbldate.BackColor = System.Drawing.Color.Transparent;
+            this.lbldate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbldate.Location = new System.Drawing.Point(1127, 11);
+            this.lbldate.Name = "lbldate";
+            this.lbldate.Size = new System.Drawing.Size(76, 20);
+            this.lbldate.TabIndex = 5;
+            this.lbldate.Text = "40:00 PM";
+            // 
+            // guna2Separator2
+            // 
+            this.guna2Separator2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2Separator2.FillColor = System.Drawing.Color.Silver;
+            this.guna2Separator2.Location = new System.Drawing.Point(1030, 34);
+            this.guna2Separator2.Name = "guna2Separator2";
+            this.guna2Separator2.Size = new System.Drawing.Size(193, 10);
+            this.guna2Separator2.TabIndex = 0;
+            // 
+            // lbldatetime
+            // 
+            this.lbldatetime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbldatetime.AutoSize = true;
+            this.lbldatetime.BackColor = System.Drawing.Color.Transparent;
+            this.lbldatetime.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldatetime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbldatetime.Location = new System.Drawing.Point(1026, 11);
+            this.lbldatetime.Name = "lbldatetime";
+            this.lbldatetime.Size = new System.Drawing.Size(95, 20);
+            this.lbldatetime.TabIndex = 5;
+            this.lbldatetime.Text = "10/01/2025";
+            // 
+            // lblweekday
+            // 
+            this.lblweekday.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblweekday.AutoSize = true;
+            this.lblweekday.BackColor = System.Drawing.Color.Transparent;
+            this.lblweekday.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblweekday.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblweekday.Location = new System.Drawing.Point(1029, 43);
+            this.lblweekday.Name = "lblweekday";
+            this.lblweekday.Size = new System.Drawing.Size(74, 23);
+            this.lblweekday.TabIndex = 1;
+            this.lblweekday.Text = "Monday";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(91, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(81, 31);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Order ";
+            // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.Image = global::PizzaCompany.Properties.Resources.companyLogo;
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(15, 4);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(70, 63);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox2.TabIndex = 0;
+            this.guna2PictureBox2.TabStop = false;
+            // 
+            // OrderPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1538, 957);
+            this.ClientSize = new System.Drawing.Size(1755, 1056);
+            this.Controls.Add(this.guna2PictureBox2);
+            this.Controls.Add(this.guna2Separator2);
+            this.Controls.Add(this.lbldatetime);
+            this.Controls.Add(this.lbldate);
+            this.Controls.Add(this.lblweekday);
+            this.Controls.Add(this.guna2Panel2);
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.btnDiscount);
+            this.Controls.Add(this.closebtn);
+            this.Controls.Add(this.flowLayoutPanel2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2Panel4);
             this.Controls.Add(this.PanelMenuContainner);
-            this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Dashboard";
+            this.Name = "OrderPage";
             this.Text = "7";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel4.PerformLayout();
             this.guna2Panel6.ResumeLayout(false);
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.guna2Panel2.ResumeLayout(false);
+            this.guna2Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -730,7 +987,7 @@
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private System.Windows.Forms.Label Total;
-        private System.Windows.Forms.Label Tax;
+        private System.Windows.Forms.Label DiscountTol;
         private System.Windows.Forms.Label label10;
         private Guna.UI2.WinForms.Guna2Button btnpayLater;
         private Guna.UI2.WinForms.Guna2Button btnplaceorder;
@@ -740,5 +997,20 @@
         private Guna.UI2.WinForms.Guna2Button btnDelivery;
         private Guna.UI2.WinForms.Guna2Button btnCredit;
         private Guna.UI2.WinForms.Guna2Button btnCarryout;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private Guna.UI2.WinForms.Guna2Button closebtn;
+        private Guna.UI2.WinForms.Guna2Button btnDiscount;
+        private Guna.UI2.WinForms.Guna2Button btnRefresh;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbldate;
+        private Guna.UI2.WinForms.Guna2ControlBox btnMaximizeBox;
+        private Guna.UI2.WinForms.Guna2ControlBox btnMinimize;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2Separator guna2Separator2;
+        private System.Windows.Forms.Label lbldatetime;
+        private System.Windows.Forms.Label lblweekday;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
     }
 }

@@ -67,12 +67,12 @@
             this.upasswdConfirm.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.upasswdConfirm.Location = new System.Drawing.Point(342, 329);
             this.upasswdConfirm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.upasswdConfirm.Modified = true;
             this.upasswdConfirm.Name = "upasswdConfirm";
             this.upasswdConfirm.PlaceholderText = "";
             this.upasswdConfirm.SelectedText = "";
             this.upasswdConfirm.Size = new System.Drawing.Size(461, 46);
             this.upasswdConfirm.TabIndex = 1;
+            this.upasswdConfirm.UseSystemPasswordChar = true;
             // 
             // upasswd
             // 
@@ -87,12 +87,12 @@
             this.upasswd.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.upasswd.Location = new System.Drawing.Point(342, 257);
             this.upasswd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.upasswd.Modified = true;
             this.upasswd.Name = "upasswd";
             this.upasswd.PlaceholderText = "";
             this.upasswd.SelectedText = "";
             this.upasswd.Size = new System.Drawing.Size(461, 46);
             this.upasswd.TabIndex = 1;
+            this.upasswd.UseSystemPasswordChar = true;
             // 
             // urole
             // 
@@ -193,7 +193,6 @@
             this.username.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.username.Location = new System.Drawing.Point(342, 115);
             this.username.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.username.Modified = true;
             this.username.Name = "username";
             this.username.PlaceholderText = "";
             this.username.SelectedText = "";
@@ -233,7 +232,6 @@
             this.uphone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.uphone.Location = new System.Drawing.Point(342, 186);
             this.uphone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.uphone.Modified = true;
             this.uphone.Name = "uphone";
             this.uphone.PlaceholderText = "";
             this.uphone.SelectedText = "";

@@ -71,6 +71,12 @@
     <Compile Include="DashbordForm.Designer.cs">
       <DependentUpon>DashbordForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DicountPage\Discount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DicountPage\Discount.Designer.cs">
+      <DependentUpon>Discount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,11 +155,17 @@
     <Compile Include="FormSidbarController\customerManagement.Designer.cs">
       <DependentUpon>customerManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSidbarController\Dashboard.cs">
+    <Compile Include="FormSidbarController\OrderPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSidbarController\Dashboard.Designer.cs">
-      <DependentUpon>Dashboard.cs</DependentUpon>
+    <Compile Include="FormSidbarController\OrderPage.Designer.cs">
+      <DependentUpon>OrderPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSidbarController\HomePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSidbarController\HomePage.Designer.cs">
+      <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
     <Compile Include="FormSidbarController\InventoryForm.cs">
       <SubType>Form</SubType>
@@ -207,11 +219,11 @@
     <Compile Include="Helper\TimeClock.Designer.cs">
       <DependentUpon>TimeClock.cs</DependentUpon>
     </Compile>
-    <Compile Include="LearnMore\Thankyou.cs">
+    <Compile Include="DicountPage\Music.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LearnMore\Thankyou.Designer.cs">
-      <DependentUpon>Thankyou.cs</DependentUpon>
+    <Compile Include="DicountPage\Music.Designer.cs">
+      <DependentUpon>Music.cs</DependentUpon>
     </Compile>
     <Compile Include="LoadingController\FromController.cs" />
     <Compile Include="MainClass.cs" />
@@ -232,6 +244,7 @@
     </Compile>
     <Compile Include="Model\ProductModel.cs" />
     <Compile Include="Model\SharedCart.cs" />
+    <Compile Include="Model\ShareDiscount.cs" />
     <Compile Include="Model\stockModel.cs" />
     <Compile Include="Model\Transaction.cs">
       <SubType>Form</SubType>
@@ -281,6 +294,9 @@
     <EmbeddedResource Include="DashbordForm.resx">
       <DependentUpon>DashbordForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DicountPage\Discount.resx">
+      <DependentUpon>Discount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -320,8 +336,11 @@
     <EmbeddedResource Include="FormSidbarController\customerManagement.resx">
       <DependentUpon>customerManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSidbarController\Dashboard.resx">
-      <DependentUpon>Dashboard.cs</DependentUpon>
+    <EmbeddedResource Include="FormSidbarController\OrderPage.resx">
+      <DependentUpon>OrderPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSidbarController\HomePage.resx">
+      <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSidbarController\InventoryForm.resx">
       <DependentUpon>InventoryForm.cs</DependentUpon>
@@ -347,8 +366,8 @@
     <EmbeddedResource Include="Helper\TimeClock.resx">
       <DependentUpon>TimeClock.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LearnMore\Thankyou.resx">
-      <DependentUpon>Thankyou.cs</DependentUpon>
+    <EmbeddedResource Include="DicountPage\Thankyou.resx">
+      <DependentUpon>Music.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Model\mProductForm.resx">
       <DependentUpon>mProductForm.cs</DependentUpon>
@@ -429,6 +448,8 @@
     <Content Include="Images\add\useradd.png" />
     <Content Include="Images\Logo\companyLogo.png" />
     <Content Include="Images\Logo\Group 1.png" />
+    <Content Include="Images\Logo\messageBox.png" />
+    <Content Include="Images\Logo\Pizza.png" />
     <Content Include="Images\Sidebar\add-productblack.png" />
     <Content Include="Images\Sidebar\add-productwhite.png" />
     <Content Include="Images\Sidebar\dashboard.png" />

@@ -1,28 +1,34 @@
-﻿using System;
-using PizzaCompany.LoadingController;
+﻿using Guna.UI2.WinForms;
+using PizzaCompany.DicountPage;
 using PizzaCompany.FormMenuController;
-using System.Windows.Forms;
-using PizzaCompany.Model;
-using Guna.UI2.WinForms;
-using System.Drawing;
 using PizzaCompany.Helper;
+using PizzaCompany.LoadingController;
+using PizzaCompany.Model;
+using System;
+using System.Drawing;
+using System.Windows.Forms;
 namespace PizzaCompany.FormSidbarController
 {
-    public partial class Dashboard : Form
+    public partial class OrderPage : Form
     {
-        public static Dashboard Instance { get; private set; }
-        public  Dashboard()
+
+        private readonly RealTimeClock clock;
+        public static OrderPage Instance { get; private set; }
+        public  OrderPage()
         {
             InitializeComponent();
             PizzaForm  pizzaForm = new PizzaForm();
             Instance = this;
             RefreshCartUI();
             Payment();
-       
-        }
-        PermissionForm permission = new PermissionForm();
+            clock = new RealTimeClock();
+            clock.AttachClock(lbldate);
+            lbldatetime.Text = DateTime.Now.ToString(format: "dd/MM/yyyy");
+            lblweekday.Text = DateTime.Now.ToString("dddd");
 
-        //=========================Update Item=====================>
+        }
+
+        //=========================Update Item qty=====================>
 
         public void UpdateCartCard(CartItem item)
         {
@@ -50,12 +56,10 @@ namespace PizzaCompany.FormSidbarController
 
         //==========================Add To Cart==================>
 
+
+
         public void AddCartCard(CartItem item)
         {
-
-
-
-    
             Guna2Panel guna2Panel = new Guna2Panel
             {
                
@@ -70,7 +74,9 @@ namespace PizzaCompany.FormSidbarController
 
 
 
-            //=====image==>
+            //=====image=====================================>
+
+
 
             Guna2Panel imageWrapper = new Guna2Panel
             {
@@ -89,7 +95,12 @@ namespace PizzaCompany.FormSidbarController
             };
             imageWrapper.Controls.Add(pictureBox);
 
+
+
             //===========label1===>
+
+
+
             Label lblTitle = new Label
             {
                 Text = item.Name,
@@ -100,7 +111,11 @@ namespace PizzaCompany.FormSidbarController
                 AutoEllipsis = true,
             };
 
+
+
             //===================>
+
+
 
             Label lblDesc = new Label
             {
@@ -114,6 +129,9 @@ namespace PizzaCompany.FormSidbarController
 
 
             //====================>
+
+
+
             Label lblQty = new Label
             {
                 Name = "lblQty",
@@ -124,6 +142,8 @@ namespace PizzaCompany.FormSidbarController
             };
 
             //===================>
+
+
             Label lblSize = new Label
             {
                 Text = int.TryParse(item.Size, out int size)
@@ -133,7 +153,9 @@ namespace PizzaCompany.FormSidbarController
                 AutoSize = true
             };
 
-          //==================>
+
+            //==================>
+
 
             Label lblPrice = new Label
             {
@@ -142,8 +164,13 @@ namespace PizzaCompany.FormSidbarController
                 Location = new Point(300, 68),
                 AutoSize = true
             };
+
+
             //=====================>
             // Delete Button
+
+
+
             Guna2Button btnDelete = new Guna2Button
             {
                 Text = "Delete",
@@ -155,8 +182,13 @@ namespace PizzaCompany.FormSidbarController
                 BorderRadius = 3
             };
             btnDelete.Click += (s, e) => RemoveCartItem(item, guna2Panel);
+
+
             //=====================>
             // Decrement Button
+
+
+
             Guna2Button btnDecrement = new Guna2Button
             {
                 Text = "-",
@@ -237,13 +269,14 @@ namespace PizzaCompany.FormSidbarController
         public string Subtotals { get; set; }
         public string Totals { get; set; }
         public decimal subtotal = 0;
-        public decimal vat = 0;
+        public decimal discount = 0;
         public decimal total = 0;
+        public decimal discountPercent {  get; set; }
 
-        public  void Payment()
+
+        public void Payment()
         {
             subtotal = 0;
-
             foreach (var item in SharedCart.Items)
             {
                 if (decimal.TryParse(item.Price, out decimal price))
@@ -251,16 +284,18 @@ namespace PizzaCompany.FormSidbarController
                     subtotal += price * item.qty;
                 }
             }
-            vat = subtotal * 0.10m;
-            total = subtotal - vat ;
-
+            discountPercent = ShareDiscount.DiscountPercent;
+            decimal discount = subtotal * discountPercent / 100;
+            total = subtotal - discount;
             Subtotals = subtotal.ToString("0.00");
             Totals = total.ToString("0.00");
-
             Subtotal.Text = $"${Subtotals}";
-            Tax.Text = $"$(10%)";
+            DiscountTol.Text = $"({discountPercent}%)";
             Total.Text = $"${Totals}";
         }
+
+
+
 
 
 
@@ -269,23 +304,25 @@ namespace PizzaCompany.FormSidbarController
         //====================All btn Event=============================>
 
 
-
-
-
         FromController contform = new FromController();
-
         private void Dashboard_Load(object sender, EventArgs e)
         {
 
+
             contform.AddMenuControls(new PizzaForm(), PanelMenuContainner);
-      
+  
 
         }
+
 
         private void btnPizza_Click(object sender, EventArgs e)
         {
             contform.AddMenuControls(new PizzaForm(), PanelMenuContainner);
         }
+
+
+
+
 
         private void btnBuffPizza_Click(object sender, EventArgs e)
         {
@@ -325,10 +362,15 @@ namespace PizzaCompany.FormSidbarController
             contform.AddControlsSidebar(new AppetizerForm(), PanelMenuContainner);
         }
 
+
+
         private void btnDesserts_Click(object sender, EventArgs e)
         {
             contform.AddControlsSidebar(new DessertForm(), PanelMenuContainner);
         }
+
+
+
 
         private void btnBeverages_Click(object sender, EventArgs e)
         {
@@ -341,24 +383,10 @@ namespace PizzaCompany.FormSidbarController
         private void btnplaceorder_Click(object sender, EventArgs e)
         {
 
-
-
-
-            if (SharedCart.Items.Count == 0)
-            {
-                MessageBox.Show("Cart is empty!");
-                return;
-            }
-            else
-            {
-                permission.ShowDialog();
-
-                if (permission.popup == true)
-                {
-                    Transaction t = new Transaction(SharedCart.Items);
-                    t.ShowDialog();
-                }
-            }
+          
+         Transaction t = new Transaction(SharedCart.Items);
+         t.ShowDialog();
+          
         }
 
         private void btnDinin_Click(object sender, EventArgs e)
@@ -428,6 +456,44 @@ namespace PizzaCompany.FormSidbarController
 
             MessageBox.Show("Order type set to Credit Cart.");
 
+        }
+
+        private void closebtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnDiscount_Click(object sender, EventArgs e)
+        {
+
+            ShareDiscount.DiscountPercent = discountPercent;
+            Discount discount = new Discount(discountPercent); 
+            discount.FormClosed += (s, args) => Payment();
+            MainClass.BlurBackround(discount);
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+           
+            Payment();
+            RefreshCartUI();
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnMaximizeBox_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal; // Restore down
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Maximized; // Maximize
+            }
         }
     }
 }

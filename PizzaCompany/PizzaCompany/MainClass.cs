@@ -238,7 +238,7 @@ namespace PizzaCompany
             {
                 qry += " AND pName LIKE @search";
             }
-            if (_myselectOption == "6" || _myselectOption == "9" || _myselectOption == "12")
+            if (_myselectOption == "6" || _myselectOption == "9" || _myselectOption == "12" || _myselectOption == "10")
             {
                 qry += " AND pSize = @size";
             }         
@@ -260,7 +260,7 @@ namespace PizzaCompany
                 cmd.Parameters.AddWithValue("@search", "%" + search + "%");
             }
 
-            if (_myselectOption == "6" || _myselectOption == "9" || _myselectOption == "12")
+            if (_myselectOption == "6" || _myselectOption == "9" || _myselectOption == "12" || _myselectOption == "10")
             {
                 cmd.Parameters.AddWithValue("@size", _myselectOption);
             }
@@ -315,7 +315,7 @@ namespace PizzaCompany
             return products;
         }
 
-        //=========================================================
+        //======================Update===================================
         public List<stockModel> getUpdatestock(int Id)
         { 
             List<stockModel> stocks = new List<stockModel>();
@@ -467,8 +467,6 @@ namespace PizzaCompany
 
 
         //=============Get Customer ByID==============================>
-
-
 
         public static CustomerModel GetCustomerById(int customerId)
         {

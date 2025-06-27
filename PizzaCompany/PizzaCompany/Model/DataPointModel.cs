@@ -9,7 +9,7 @@ namespace PizzaCompany.Model
     class DataPointModel
     {
         public DateTime Date { get; set; }
-        public int Value { get; set; }
+        public decimal Value { get; set; }
     }
 
 

@@ -56,7 +56,7 @@
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.thisweeksale = new System.Windows.Forms.Label();
             this.unpaid = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.netSale = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.amounttotalPrice = new System.Windows.Forms.Label();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
@@ -64,17 +64,6 @@
             this.btnExport = new Guna.UI2.WinForms.Guna2Button();
             this.btnSchedul = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.btnAll = new Guna.UI2.WinForms.Guna2Button();
-            this.btnUnpaid = new Guna.UI2.WinForms.Guna2Button();
-            this.btnAZ = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSortBy = new Guna.UI2.WinForms.Guna2Button();
-            this.searchOrder = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblOvertimeItemsCount = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnDelivery = new Guna.UI2.WinForms.Guna2Button();
-            this.btnCarryOut = new Guna.UI2.WinForms.Guna2Button();
-            this.btndinein = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSuccess = new Guna.UI2.WinForms.Guna2Button();
             this.Sr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -90,13 +79,22 @@
             this.datetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.overtime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.order = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnAll = new Guna.UI2.WinForms.Guna2Button();
+            this.btnUnpaid = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAZ = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSortBy = new Guna.UI2.WinForms.Guna2Button();
+            this.searchOrder = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblOvertimeItemsCount = new System.Windows.Forms.Label();
+            this.btnDelivery = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCarryOut = new Guna.UI2.WinForms.Guna2Button();
+            this.btndinein = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSuccess = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -135,9 +133,9 @@
             this.Growth.ForeColor = System.Drawing.Color.Green;
             this.Growth.Location = new System.Drawing.Point(18, 182);
             this.Growth.Name = "Growth";
-            this.Growth.Size = new System.Drawing.Size(71, 16);
+            this.Growth.Size = new System.Drawing.Size(51, 16);
             this.Growth.TabIndex = 5;
-            this.Growth.Text = "Last Week";
+            this.Growth.Text = "Growth:";
             // 
             // LastWeek
             // 
@@ -334,7 +332,7 @@
             this.guna2Panel4.BorderThickness = 1;
             this.guna2Panel4.Controls.Add(this.thisweeksale);
             this.guna2Panel4.Controls.Add(this.unpaid);
-            this.guna2Panel4.Controls.Add(this.label2);
+            this.guna2Panel4.Controls.Add(this.netSale);
             this.guna2Panel4.Controls.Add(this.label6);
             this.guna2Panel4.Controls.Add(this.amounttotalPrice);
             this.guna2Panel4.FillColor = System.Drawing.Color.White;
@@ -366,15 +364,15 @@
             this.unpaid.TabIndex = 4;
             this.unpaid.Text = "Unpaid";
             // 
-            // label2
+            // netSale
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label2.Location = new System.Drawing.Point(18, 86);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 16);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Net Sale";
+            this.netSale.AutoSize = true;
+            this.netSale.ForeColor = System.Drawing.Color.ForestGreen;
+            this.netSale.Location = new System.Drawing.Point(18, 86);
+            this.netSale.Name = "netSale";
+            this.netSale.Size = new System.Drawing.Size(59, 16);
+            this.netSale.TabIndex = 3;
+            this.netSale.Text = "Net Sale";
             // 
             // label6
             // 
@@ -480,6 +478,9 @@
             this.guna2DataGridView1.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.guna2DataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -515,13 +516,13 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.guna2DataGridView1.Location = new System.Drawing.Point(18, 500);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.ReadOnly = true;
             this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.RowHeadersWidth = 51;
             this.guna2DataGridView1.RowTemplate.Height = 24;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(1736, 418);
+            this.guna2DataGridView1.Size = new System.Drawing.Size(1474, 333);
             this.guna2DataGridView1.TabIndex = 8;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -545,241 +546,6 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.guna2DataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellClick);
-            // 
-            // btnAll
-            // 
-            this.btnAll.BackColor = System.Drawing.Color.Transparent;
-            this.btnAll.BorderColor = System.Drawing.Color.Transparent;
-            this.btnAll.BorderRadius = 2;
-            this.btnAll.BorderThickness = 1;
-            this.btnAll.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnAll.Checked = true;
-            this.btnAll.CheckedState.BorderColor = System.Drawing.Color.Transparent;
-            this.btnAll.CheckedState.CustomBorderColor = System.Drawing.Color.Transparent;
-            this.btnAll.CheckedState.FillColor = System.Drawing.Color.White;
-            this.btnAll.CheckedState.ForeColor = System.Drawing.Color.Black;
-            this.btnAll.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAll.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAll.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAll.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAll.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAll.FillColor = System.Drawing.Color.Silver;
-            this.btnAll.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAll.ForeColor = System.Drawing.Color.Black;
-            this.btnAll.Location = new System.Drawing.Point(18, 441);
-            this.btnAll.Name = "btnAll";
-            this.btnAll.Size = new System.Drawing.Size(105, 53);
-            this.btnAll.TabIndex = 10;
-            this.btnAll.Text = "All";
-            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
-            // 
-            // btnUnpaid
-            // 
-            this.btnUnpaid.BackColor = System.Drawing.Color.Transparent;
-            this.btnUnpaid.BorderColor = System.Drawing.Color.Transparent;
-            this.btnUnpaid.BorderRadius = 2;
-            this.btnUnpaid.BorderThickness = 1;
-            this.btnUnpaid.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnUnpaid.CheckedState.FillColor = System.Drawing.Color.White;
-            this.btnUnpaid.CheckedState.ForeColor = System.Drawing.Color.Black;
-            this.btnUnpaid.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUnpaid.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnUnpaid.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnUnpaid.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnUnpaid.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnUnpaid.FillColor = System.Drawing.Color.Silver;
-            this.btnUnpaid.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUnpaid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnUnpaid.Location = new System.Drawing.Point(605, 441);
-            this.btnUnpaid.Name = "btnUnpaid";
-            this.btnUnpaid.Size = new System.Drawing.Size(145, 53);
-            this.btnUnpaid.TabIndex = 10;
-            this.btnUnpaid.Text = "Pending";
-            this.btnUnpaid.Click += new System.EventHandler(this.btnUnpaid_Click);
-            // 
-            // btnAZ
-            // 
-            this.btnAZ.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAZ.BackColor = System.Drawing.Color.Transparent;
-            this.btnAZ.BorderColor = System.Drawing.Color.Transparent;
-            this.btnAZ.BorderRadius = 3;
-            this.btnAZ.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAZ.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAZ.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAZ.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAZ.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAZ.FillColor = System.Drawing.Color.White;
-            this.btnAZ.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAZ.ForeColor = System.Drawing.Color.Black;
-            this.btnAZ.Location = new System.Drawing.Point(1291, 444);
-            this.btnAZ.Name = "btnAZ";
-            this.btnAZ.Size = new System.Drawing.Size(93, 50);
-            this.btnAZ.TabIndex = 6;
-            this.btnAZ.Text = "A-Z";
-            this.btnAZ.Click += new System.EventHandler(this.btnAZ_Click);
-            // 
-            // btnSortBy
-            // 
-            this.btnSortBy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSortBy.BackColor = System.Drawing.Color.Transparent;
-            this.btnSortBy.BorderColor = System.Drawing.Color.Transparent;
-            this.btnSortBy.BorderRadius = 3;
-            this.btnSortBy.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSortBy.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSortBy.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSortBy.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSortBy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSortBy.FillColor = System.Drawing.Color.White;
-            this.btnSortBy.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnSortBy.ForeColor = System.Drawing.Color.Black;
-            this.btnSortBy.Image = global::PizzaCompany.Properties.Resources.arrow;
-            this.btnSortBy.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnSortBy.Location = new System.Drawing.Point(1396, 444);
-            this.btnSortBy.Name = "btnSortBy";
-            this.btnSortBy.Size = new System.Drawing.Size(96, 50);
-            this.btnSortBy.TabIndex = 6;
-            this.btnSortBy.Click += new System.EventHandler(this.btnSortBy_Click);
-            // 
-            // searchOrder
-            // 
-            this.searchOrder.BorderRadius = 3;
-            this.searchOrder.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.searchOrder.DefaultText = "";
-            this.searchOrder.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.searchOrder.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.searchOrder.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.searchOrder.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.searchOrder.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.searchOrder.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.searchOrder.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.searchOrder.IconLeft = global::PizzaCompany.Properties.Resources.search;
-            this.searchOrder.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.searchOrder.Location = new System.Drawing.Point(12, 13);
-            this.searchOrder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.searchOrder.Name = "searchOrder";
-            this.searchOrder.PlaceholderText = "Search Order";
-            this.searchOrder.SelectedText = "";
-            this.searchOrder.Size = new System.Drawing.Size(454, 57);
-            this.searchOrder.TabIndex = 0;
-            this.searchOrder.TextChanged += new System.EventHandler(this.searchOrder_TextChanged);
-            // 
-            // lblOvertimeItemsCount
-            // 
-            this.lblOvertimeItemsCount.AutoSize = true;
-            this.lblOvertimeItemsCount.BackColor = System.Drawing.Color.Transparent;
-            this.lblOvertimeItemsCount.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOvertimeItemsCount.ForeColor = System.Drawing.Color.Black;
-            this.lblOvertimeItemsCount.Location = new System.Drawing.Point(13, 37);
-            this.lblOvertimeItemsCount.Name = "lblOvertimeItemsCount";
-            this.lblOvertimeItemsCount.Size = new System.Drawing.Size(61, 37);
-            this.lblOvertimeItemsCount.TabIndex = 1;
-            this.lblOvertimeItemsCount.Text = "13 -";
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel1.Controls.Add(this.guna2DataGridView1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 514);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1480, 316);
-            this.flowLayoutPanel1.TabIndex = 11;
-            // 
-            // btnDelivery
-            // 
-            this.btnDelivery.BackColor = System.Drawing.Color.Transparent;
-            this.btnDelivery.BorderColor = System.Drawing.Color.Transparent;
-            this.btnDelivery.BorderRadius = 2;
-            this.btnDelivery.BorderThickness = 1;
-            this.btnDelivery.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnDelivery.CheckedState.FillColor = System.Drawing.Color.White;
-            this.btnDelivery.CheckedState.ForeColor = System.Drawing.Color.Black;
-            this.btnDelivery.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelivery.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDelivery.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDelivery.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDelivery.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDelivery.FillColor = System.Drawing.Color.Silver;
-            this.btnDelivery.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelivery.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnDelivery.Location = new System.Drawing.Point(297, 441);
-            this.btnDelivery.Name = "btnDelivery";
-            this.btnDelivery.Size = new System.Drawing.Size(137, 53);
-            this.btnDelivery.TabIndex = 10;
-            this.btnDelivery.Text = "Delivery";
-            this.btnDelivery.Click += new System.EventHandler(this.btnDelivery_Click);
-            // 
-            // btnCarryOut
-            // 
-            this.btnCarryOut.BackColor = System.Drawing.Color.Transparent;
-            this.btnCarryOut.BorderColor = System.Drawing.Color.Transparent;
-            this.btnCarryOut.BorderRadius = 2;
-            this.btnCarryOut.BorderThickness = 1;
-            this.btnCarryOut.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnCarryOut.CheckedState.FillColor = System.Drawing.Color.White;
-            this.btnCarryOut.CheckedState.ForeColor = System.Drawing.Color.Black;
-            this.btnCarryOut.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCarryOut.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnCarryOut.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnCarryOut.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnCarryOut.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCarryOut.FillColor = System.Drawing.Color.Silver;
-            this.btnCarryOut.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCarryOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnCarryOut.Location = new System.Drawing.Point(451, 441);
-            this.btnCarryOut.Name = "btnCarryOut";
-            this.btnCarryOut.Size = new System.Drawing.Size(137, 53);
-            this.btnCarryOut.TabIndex = 10;
-            this.btnCarryOut.Text = "Carry Out";
-            this.btnCarryOut.Click += new System.EventHandler(this.btnCarryOut_Click);
-            // 
-            // btndinein
-            // 
-            this.btndinein.BorderColor = System.Drawing.Color.Transparent;
-            this.btndinein.BorderRadius = 3;
-            this.btndinein.BorderThickness = 1;
-            this.btndinein.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btndinein.CheckedState.FillColor = System.Drawing.Color.White;
-            this.btndinein.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btndinein.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btndinein.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btndinein.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btndinein.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btndinein.FillColor = System.Drawing.Color.Silver;
-            this.btndinein.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btndinein.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btndinein.Location = new System.Drawing.Point(138, 441);
-            this.btndinein.Name = "btndinein";
-            this.btndinein.Size = new System.Drawing.Size(141, 53);
-            this.btndinein.TabIndex = 12;
-            this.btndinein.Text = "DineIn";
-            this.btndinein.Click += new System.EventHandler(this.btndinein_Click);
-            // 
-            // btnSuccess
-            // 
-            this.btnSuccess.BorderColor = System.Drawing.Color.Transparent;
-            this.btnSuccess.BorderRadius = 3;
-            this.btnSuccess.BorderThickness = 1;
-            this.btnSuccess.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnSuccess.CheckedState.FillColor = System.Drawing.Color.White;
-            this.btnSuccess.CheckedState.ForeColor = System.Drawing.Color.Black;
-            this.btnSuccess.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSuccess.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSuccess.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSuccess.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSuccess.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSuccess.FillColor = System.Drawing.Color.Silver;
-            this.btnSuccess.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuccess.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnSuccess.Location = new System.Drawing.Point(765, 441);
-            this.btnSuccess.Name = "btnSuccess";
-            this.btnSuccess.Size = new System.Drawing.Size(145, 53);
-            this.btnSuccess.TabIndex = 13;
-            this.btnSuccess.Text = "Success";
-            this.btnSuccess.Click += new System.EventHandler(this.btnSuccess_Click);
             // 
             // Sr
             // 
@@ -911,12 +677,235 @@
             this.order.Name = "order";
             this.order.ReadOnly = true;
             // 
+            // btnAll
+            // 
+            this.btnAll.BackColor = System.Drawing.Color.Transparent;
+            this.btnAll.BorderColor = System.Drawing.Color.Transparent;
+            this.btnAll.BorderRadius = 2;
+            this.btnAll.BorderThickness = 1;
+            this.btnAll.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnAll.Checked = true;
+            this.btnAll.CheckedState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnAll.CheckedState.CustomBorderColor = System.Drawing.Color.Transparent;
+            this.btnAll.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnAll.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.btnAll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAll.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAll.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAll.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAll.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAll.FillColor = System.Drawing.Color.Silver;
+            this.btnAll.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAll.ForeColor = System.Drawing.Color.Black;
+            this.btnAll.Location = new System.Drawing.Point(18, 441);
+            this.btnAll.Name = "btnAll";
+            this.btnAll.Size = new System.Drawing.Size(105, 53);
+            this.btnAll.TabIndex = 10;
+            this.btnAll.Text = "All";
+            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
+            // 
+            // btnUnpaid
+            // 
+            this.btnUnpaid.BackColor = System.Drawing.Color.Transparent;
+            this.btnUnpaid.BorderColor = System.Drawing.Color.Transparent;
+            this.btnUnpaid.BorderRadius = 2;
+            this.btnUnpaid.BorderThickness = 1;
+            this.btnUnpaid.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnUnpaid.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnUnpaid.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.btnUnpaid.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUnpaid.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUnpaid.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUnpaid.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUnpaid.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUnpaid.FillColor = System.Drawing.Color.Silver;
+            this.btnUnpaid.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUnpaid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnUnpaid.Location = new System.Drawing.Point(605, 441);
+            this.btnUnpaid.Name = "btnUnpaid";
+            this.btnUnpaid.Size = new System.Drawing.Size(145, 53);
+            this.btnUnpaid.TabIndex = 10;
+            this.btnUnpaid.Text = "Pending";
+            this.btnUnpaid.Click += new System.EventHandler(this.btnUnpaid_Click);
+            // 
+            // btnAZ
+            // 
+            this.btnAZ.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAZ.BackColor = System.Drawing.Color.Transparent;
+            this.btnAZ.BorderColor = System.Drawing.Color.Transparent;
+            this.btnAZ.BorderRadius = 3;
+            this.btnAZ.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAZ.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAZ.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAZ.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAZ.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAZ.FillColor = System.Drawing.Color.White;
+            this.btnAZ.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAZ.ForeColor = System.Drawing.Color.Black;
+            this.btnAZ.Location = new System.Drawing.Point(1291, 444);
+            this.btnAZ.Name = "btnAZ";
+            this.btnAZ.Size = new System.Drawing.Size(93, 50);
+            this.btnAZ.TabIndex = 6;
+            this.btnAZ.Text = "A-Z";
+            this.btnAZ.Click += new System.EventHandler(this.btnAZ_Click);
+            // 
+            // btnSortBy
+            // 
+            this.btnSortBy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSortBy.BackColor = System.Drawing.Color.Transparent;
+            this.btnSortBy.BorderColor = System.Drawing.Color.Transparent;
+            this.btnSortBy.BorderRadius = 3;
+            this.btnSortBy.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSortBy.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSortBy.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSortBy.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSortBy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSortBy.FillColor = System.Drawing.Color.White;
+            this.btnSortBy.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSortBy.ForeColor = System.Drawing.Color.Black;
+            this.btnSortBy.Image = global::PizzaCompany.Properties.Resources.arrow;
+            this.btnSortBy.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnSortBy.Location = new System.Drawing.Point(1396, 444);
+            this.btnSortBy.Name = "btnSortBy";
+            this.btnSortBy.Size = new System.Drawing.Size(96, 50);
+            this.btnSortBy.TabIndex = 6;
+            this.btnSortBy.Click += new System.EventHandler(this.btnSortBy_Click);
+            // 
+            // searchOrder
+            // 
+            this.searchOrder.BorderRadius = 3;
+            this.searchOrder.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchOrder.DefaultText = "";
+            this.searchOrder.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.searchOrder.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.searchOrder.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchOrder.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchOrder.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.searchOrder.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.searchOrder.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.searchOrder.IconLeft = global::PizzaCompany.Properties.Resources.search;
+            this.searchOrder.IconLeftSize = new System.Drawing.Size(30, 30);
+            this.searchOrder.Location = new System.Drawing.Point(12, 13);
+            this.searchOrder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.searchOrder.Name = "searchOrder";
+            this.searchOrder.PlaceholderText = "Search Order";
+            this.searchOrder.SelectedText = "";
+            this.searchOrder.Size = new System.Drawing.Size(454, 57);
+            this.searchOrder.TabIndex = 0;
+            this.searchOrder.TextChanged += new System.EventHandler(this.searchOrder_TextChanged);
+            // 
+            // lblOvertimeItemsCount
+            // 
+            this.lblOvertimeItemsCount.AutoSize = true;
+            this.lblOvertimeItemsCount.BackColor = System.Drawing.Color.Transparent;
+            this.lblOvertimeItemsCount.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOvertimeItemsCount.ForeColor = System.Drawing.Color.Black;
+            this.lblOvertimeItemsCount.Location = new System.Drawing.Point(13, 37);
+            this.lblOvertimeItemsCount.Name = "lblOvertimeItemsCount";
+            this.lblOvertimeItemsCount.Size = new System.Drawing.Size(61, 37);
+            this.lblOvertimeItemsCount.TabIndex = 1;
+            this.lblOvertimeItemsCount.Text = "13 -";
+            // 
+            // btnDelivery
+            // 
+            this.btnDelivery.BackColor = System.Drawing.Color.Transparent;
+            this.btnDelivery.BorderColor = System.Drawing.Color.Transparent;
+            this.btnDelivery.BorderRadius = 2;
+            this.btnDelivery.BorderThickness = 1;
+            this.btnDelivery.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnDelivery.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnDelivery.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.btnDelivery.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelivery.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelivery.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelivery.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDelivery.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDelivery.FillColor = System.Drawing.Color.Silver;
+            this.btnDelivery.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelivery.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnDelivery.Location = new System.Drawing.Point(297, 441);
+            this.btnDelivery.Name = "btnDelivery";
+            this.btnDelivery.Size = new System.Drawing.Size(137, 53);
+            this.btnDelivery.TabIndex = 10;
+            this.btnDelivery.Text = "Delivery";
+            this.btnDelivery.Click += new System.EventHandler(this.btnDelivery_Click);
+            // 
+            // btnCarryOut
+            // 
+            this.btnCarryOut.BackColor = System.Drawing.Color.Transparent;
+            this.btnCarryOut.BorderColor = System.Drawing.Color.Transparent;
+            this.btnCarryOut.BorderRadius = 2;
+            this.btnCarryOut.BorderThickness = 1;
+            this.btnCarryOut.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnCarryOut.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnCarryOut.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.btnCarryOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCarryOut.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCarryOut.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCarryOut.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCarryOut.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCarryOut.FillColor = System.Drawing.Color.Silver;
+            this.btnCarryOut.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCarryOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCarryOut.Location = new System.Drawing.Point(451, 441);
+            this.btnCarryOut.Name = "btnCarryOut";
+            this.btnCarryOut.Size = new System.Drawing.Size(137, 53);
+            this.btnCarryOut.TabIndex = 10;
+            this.btnCarryOut.Text = "Carry Out";
+            this.btnCarryOut.Click += new System.EventHandler(this.btnCarryOut_Click);
+            // 
+            // btndinein
+            // 
+            this.btndinein.BorderColor = System.Drawing.Color.Transparent;
+            this.btndinein.BorderRadius = 3;
+            this.btndinein.BorderThickness = 1;
+            this.btndinein.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btndinein.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btndinein.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btndinein.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btndinein.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btndinein.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btndinein.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btndinein.FillColor = System.Drawing.Color.Silver;
+            this.btndinein.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btndinein.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btndinein.Location = new System.Drawing.Point(138, 441);
+            this.btndinein.Name = "btndinein";
+            this.btndinein.Size = new System.Drawing.Size(141, 53);
+            this.btndinein.TabIndex = 12;
+            this.btndinein.Text = "DineIn";
+            this.btndinein.Click += new System.EventHandler(this.btndinein_Click);
+            // 
+            // btnSuccess
+            // 
+            this.btnSuccess.BorderColor = System.Drawing.Color.Transparent;
+            this.btnSuccess.BorderRadius = 3;
+            this.btnSuccess.BorderThickness = 1;
+            this.btnSuccess.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnSuccess.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnSuccess.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.btnSuccess.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSuccess.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSuccess.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSuccess.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSuccess.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSuccess.FillColor = System.Drawing.Color.Silver;
+            this.btnSuccess.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuccess.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnSuccess.Location = new System.Drawing.Point(765, 441);
+            this.btnSuccess.Name = "btnSuccess";
+            this.btnSuccess.Size = new System.Drawing.Size(145, 53);
+            this.btnSuccess.TabIndex = 13;
+            this.btnSuccess.Text = "Success";
+            this.btnSuccess.Click += new System.EventHandler(this.btnSuccess_Click);
+            // 
             // OrderManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1504, 833);
+            this.Controls.Add(this.guna2DataGridView1);
             this.Controls.Add(this.btnSuccess);
             this.Controls.Add(this.btndinein);
             this.Controls.Add(this.btnAll);
@@ -931,7 +920,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.searchOrder);
             this.Controls.Add(this.guna2Panel5);
-            this.Controls.Add(this.flowLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "OrderManagementForm";
             this.Text = "OrderManagementForm";
@@ -946,7 +934,6 @@
             this.guna2Panel4.PerformLayout();
             this.guna2Panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -984,9 +971,8 @@
         private System.Windows.Forms.Label LastWeek;
         private System.Windows.Forms.Label Growth;
         private System.Windows.Forms.Label minute;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label returnpercentage;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label netSale;
         private System.Windows.Forms.Label unpaid;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label Affected;

@@ -127,6 +127,7 @@ namespace PizzaCompany.Model
                 pSize.Items.Add("6");
                 pSize.Items.Add("9");
                 pSize.Items.Add("12");
+
                 pGroup.SelectedIndex = 0; 
                 pSize.SelectedIndex = 0;  
             }
@@ -134,12 +135,22 @@ namespace PizzaCompany.Model
             {
                 pGroup.Items.Add("Selected");
                 pGroup.Items.Add("soft drink && water");
-                pGroup.Items.Add("Alcohol");
-            
-                pSize.Items.Add("Selected");          
+                pGroup.Items.Add("Alcohol");           
+                pSize.Items.Add("Selected");     
+                
                 pGroup.SelectedIndex = 0;
                 pSize.SelectedIndex = 0;
             }
+            if (pCategory.SelectedItem != null && pCategory.SelectedItem.ToString() == "Checken")
+            {
+                pSize.Items.Add("Selected");
+                pSize.Items.Add("10");
+                pSize.Items.Add("6");
+                pGroup.Items.Add("Selected");
+                pSize.SelectedIndex = 0;
+                pGroup.SelectedIndex = 0;
+
+            } ;
         }
 
 

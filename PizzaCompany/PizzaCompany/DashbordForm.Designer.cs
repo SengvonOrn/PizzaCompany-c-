@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblalert = new System.Windows.Forms.Label();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btnMinimize = new Guna.UI2.WinForms.Guna2ControlBox();
             this.role = new System.Windows.Forms.Label();
+            this.btnClose = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.btnMaximizeBox = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.user1 = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
@@ -52,7 +52,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.PanelContainer = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -62,10 +61,10 @@
             // 
             this.guna2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2Panel1.Controls.Add(this.lblalert);
-            this.guna2Panel1.Controls.Add(this.guna2PictureBox2);
-            this.guna2Panel1.Controls.Add(this.label2);
+            this.guna2Panel1.Controls.Add(this.btnMinimize);
             this.guna2Panel1.Controls.Add(this.role);
+            this.guna2Panel1.Controls.Add(this.btnClose);
+            this.guna2Panel1.Controls.Add(this.btnMaximizeBox);
             this.guna2Panel1.Controls.Add(this.guna2CirclePictureBox1);
             this.guna2Panel1.Controls.Add(this.user1);
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
@@ -74,65 +73,72 @@
             this.guna2Panel1.Size = new System.Drawing.Size(1366, 108);
             this.guna2Panel1.TabIndex = 0;
             // 
-            // lblalert
+            // btnMinimize
             // 
-            this.lblalert.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblalert.AutoSize = true;
-            this.lblalert.BackColor = System.Drawing.Color.Red;
-            this.lblalert.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblalert.ForeColor = System.Drawing.Color.White;
-            this.lblalert.Location = new System.Drawing.Point(1124, 34);
-            this.lblalert.Name = "lblalert";
-            this.lblalert.Size = new System.Drawing.Size(18, 20);
-            this.lblalert.TabIndex = 4;
-            this.lblalert.Text = "0";
-            // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox2.Image = global::PizzaCompany.Properties.Resources.bell;
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(1102, 40);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(36, 35);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox2.TabIndex = 3;
-            this.guna2PictureBox2.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(1086, 78);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 17);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Notification";
+            this.btnMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMinimize.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
+            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimize.CustomClick = true;
+            this.btnMinimize.FillColor = System.Drawing.Color.Transparent;
+            this.btnMinimize.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMinimize.IconColor = System.Drawing.Color.Black;
+            this.btnMinimize.Location = new System.Drawing.Point(1087, 33);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(65, 50);
+            this.btnMinimize.TabIndex = 6;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // role
             // 
-            this.role.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.role.AutoSize = true;
             this.role.BackColor = System.Drawing.Color.Transparent;
             this.role.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.role.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.role.Location = new System.Drawing.Point(1222, 55);
+            this.role.Location = new System.Drawing.Point(64, 54);
             this.role.Name = "role";
             this.role.Size = new System.Drawing.Size(81, 20);
             this.role.TabIndex = 2;
             this.role.Text = "00/11/2025";
             // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnClose.BorderColor = System.Drawing.Color.Transparent;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.CustomClick = true;
+            this.btnClose.FillColor = System.Drawing.Color.Transparent;
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.IconColor = System.Drawing.Color.Black;
+            this.btnClose.Location = new System.Drawing.Point(1263, 33);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(65, 50);
+            this.btnClose.TabIndex = 6;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnMaximizeBox
+            // 
+            this.btnMaximizeBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximizeBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMaximizeBox.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
+            this.btnMaximizeBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMaximizeBox.CustomClick = true;
+            this.btnMaximizeBox.FillColor = System.Drawing.Color.Transparent;
+            this.btnMaximizeBox.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaximizeBox.IconColor = System.Drawing.Color.Black;
+            this.btnMaximizeBox.Location = new System.Drawing.Point(1179, 33);
+            this.btnMaximizeBox.Name = "btnMaximizeBox";
+            this.btnMaximizeBox.Size = new System.Drawing.Size(61, 50);
+            this.btnMaximizeBox.TabIndex = 6;
+            this.btnMaximizeBox.Click += new System.EventHandler(this.btnMaximizeBox_Click);
+            // 
             // guna2CirclePictureBox1
             // 
-            this.guna2CirclePictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2CirclePictureBox1.Image = global::PizzaCompany.Properties.Resources.userMblack;
             this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(1178, 34);
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(20, 33);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CirclePictureBox1.Size = new System.Drawing.Size(38, 41);
@@ -142,11 +148,10 @@
             // 
             // user1
             // 
-            this.user1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.user1.AutoSize = true;
             this.user1.BackColor = System.Drawing.Color.Transparent;
             this.user1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.user1.Location = new System.Drawing.Point(1222, 34);
+            this.user1.Location = new System.Drawing.Point(64, 33);
             this.user1.Name = "user1";
             this.user1.Size = new System.Drawing.Size(87, 20);
             this.user1.TabIndex = 0;
@@ -449,7 +454,7 @@
             this.btnInventory.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.btnInventory.Size = new System.Drawing.Size(398, 58);
             this.btnInventory.TabIndex = 3;
-            this.btnInventory.Text = "Inventory Managenamt";
+            this.btnInventory.Text = "Order";
             this.btnInventory.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
             // 
@@ -515,7 +520,7 @@
             this.btnDashboard.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
             this.btnDashboard.Size = new System.Drawing.Size(398, 58);
             this.btnDashboard.TabIndex = 2;
-            this.btnDashboard.Text = "Order";
+            this.btnDashboard.Text = "Home";
             this.btnDashboard.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDashboard.UseTransparentBackground = true;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
@@ -570,7 +575,6 @@
             this.Load += new System.EventHandler(this.DashbordForm_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
@@ -599,10 +603,10 @@
         private System.Windows.Forms.Label user1;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private System.Windows.Forms.Label role;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblalert;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button btnStock;
+        private Guna.UI2.WinForms.Guna2ControlBox btnMinimize;
+        private Guna.UI2.WinForms.Guna2ControlBox btnMaximizeBox;
+        private Guna.UI2.WinForms.Guna2ControlBox btnClose;
     }
 }

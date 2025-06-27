@@ -34,15 +34,18 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 83);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1116, 639);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1322, 741);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // searchMenu
             // 
+            this.searchMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.searchMenu.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.searchMenu.DefaultText = "";
             this.searchMenu.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -54,7 +57,7 @@
             this.searchMenu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.searchMenu.IconLeft = global::PizzaCompany.Properties.Resources.search;
             this.searchMenu.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.searchMenu.Location = new System.Drawing.Point(722, 13);
+            this.searchMenu.Location = new System.Drawing.Point(857, 13);
             this.searchMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.searchMenu.Name = "searchMenu";
             this.searchMenu.PlaceholderText = "";
@@ -67,7 +70,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1118, 723);
+            this.ClientSize = new System.Drawing.Size(1263, 823);
             this.Controls.Add(this.searchMenu);
             this.Controls.Add(this.flowLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

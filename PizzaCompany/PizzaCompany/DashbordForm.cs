@@ -1,9 +1,9 @@
-﻿using System;
-using PizzaCompany.LoadingController;
-using System.Windows.Forms;
-using PizzaCompany.FormSidbarController;
-using PizzaCompany.LearnMore;
+﻿using PizzaCompany.FormSidbarController;
 using PizzaCompany.Helper;
+using PizzaCompany.LoadingController;
+using System;
+using System.Windows.Controls;
+using System.Windows.Forms;
 
 namespace PizzaCompany
 {
@@ -29,10 +29,6 @@ namespace PizzaCompany
         //======for accessing everywhere =========>
         static DashbordForm _obj;
 
-        private int notificationCount = 0;
-
-
-        //PermissionForm permission = new PermissionForm();
 
 
         customerCheckOutform customer = new customerCheckOutform();
@@ -48,18 +44,23 @@ namespace PizzaCompany
         FromController contform = new FromController();
         public void backDashboard()
         {
-            contform.AddControlsSidebar(new Dashboard(), PanelContainer);
+            contform.AddControlsSidebar(new HomePage(), PanelContainer);
         }
         public void DashbordForm_Load(object sender, EventArgs e)
         {
-            contform.AddControlsSidebar(new Dashboard(), PanelContainer);
+
+            contform.AddControlsSidebar(new HomePage(), PanelContainer);
             _obj = this;
-     
+
         }
         //================>
+    
+
+
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            contform.AddControlsSidebar(new Dashboard(), PanelContainer);
+
+            contform.AddControlsSidebar(new HomePage(), PanelContainer);
 
         }
 
@@ -71,12 +72,29 @@ namespace PizzaCompany
         {
             contform.AddControlsSidebar(new customerManagement(), PanelContainer);
         }
+
+
+
+
+
+        private OrderPage OrderPage;
+
         private void btnInventory_Click(object sender, EventArgs e)
         {
-             MessageBox.Show("I'm sorry for this option, we spend our the time on this option just for money 😢. ");
-            //contform.AddControlsSidebar(new InventoryForm(), PanelContainer);
+            if (OrderPage == null || OrderPage.IsDisposed)
+            {
+                OrderPage = new OrderPage();
+            }
 
+            if (OrderPage.WindowState == FormWindowState.Minimized)
+            {
+                OrderPage.WindowState = FormWindowState.Maximized;
+            }
+
+            OrderPage.BringToFront();
+            OrderPage.Show();
         }
+
 
         private void btnOrderManages_Click(object sender, EventArgs e)
         {
@@ -133,6 +151,32 @@ namespace PizzaCompany
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             //MainClass.BlurBackround(new  Thankyou());
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMaximizeBox_Click(object sender, EventArgs e)
+        {
+
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+
+ 
         }
     } 
     }
