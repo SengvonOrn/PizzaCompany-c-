@@ -6,6 +6,9 @@ The Function of This Project:
  
   ![Screenshot 2025-06-27 185114](https://github.com/user-attachments/assets/92e78879-9589-4efa-8046-8b5b6554e42d)
   ![Screenshot 2025-06-27 185213](https://github.com/user-attachments/assets/144b318d-e3eb-4e33-80ca-93e5e604e553)
++ Customer Management:
+  - Can manage updates, deletions, and reviews for print again, who are ready to order.
+    ![Screenshot 2025-06-27 185145](https://github.com/user-attachments/assets/f0c694e5-c197-4c0c-b84a-a1976e7e78c9)
 
 + Order Management:
   - Can know the total order, order(current week, last week) growth average.
